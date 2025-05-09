@@ -29,28 +29,31 @@ custom-element:defined {
 ```html
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-  <style>
-    custom-button {
-      color: gray; /* 未定義の場合のスタイル */
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      custom-button {
+        color: gray; /* 未定義の場合のスタイル */
+      }
 
-    custom-button:defined {
-      color: blue; /* 定義後のスタイル */
-    }
-  </style>
-</head>
-<body>
-  <custom-button>ボタン</custom-button>
+      custom-button:defined {
+        color: blue; /* 定義後のスタイル */
+      }
+    </style>
+  </head>
+  <body>
+    <custom-button>ボタン</custom-button>
 
-  <script>
-    setTimeout(() => {
-      class CustomButton extends HTMLElement {}
-      customElements.define("custom-button", CustomButton);
-    }, 2000);
-  </script>
-</body>
+    <script>
+      setTimeout(() => {
+        class CustomButton extends HTMLElement {}
+        customElements.define('custom-button', CustomButton);
+      }, 2000);
+    </script>
+  </body>
 </html>
+
 ```
 
 custom-button は最初 グレー で表示され、2秒後に定義されると青色に変化 する。
@@ -75,31 +78,36 @@ Shadow DOM のホスト要素全体にスタイルを適用できます。
 ```html
 <!DOCTYPE html>
 <html lang="ja">
-<body>
-  <custom-box>コンテンツ</custom-box>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <custom-box>コンテンツ</custom-box>
 
-  <script>
-    class CustomBox extends HTMLElement {
-      constructor() {
-        super();
-        const shadow = this.attachShadow({ mode: "open" });
-        shadow.innerHTML = `
-          <style>
-            :host {
-              display: block;
-              border: 2px solid black;
-              padding: 10px;
-              background-color: lightgray;
-            }
-          </style>
-          <slot></slot>
-        `;
+    <script>
+      class CustomBox extends HTMLElement {
+        constructor() {
+          super();
+          const shadow = this.attachShadow({ mode: 'open' });
+          shadow.innerHTML = `
+            <style>
+              :host {
+                display: block;
+                border: 2px solid black;
+                padding: 10px;
+                background-color: lightgray;
+              }
+            </style>
+            <slot></slot>
+          `;
+        }
       }
-    }
-    customElements.define("custom-box", CustomBox);
-  </script>
-</body>
+      customElements.define('custom-box', CustomBox);
+    </script>
+  </body>
 </html>
+
 ```
 
 - :host を使うことで、カスタム要素 `<custom-box>` 自体に ボーダーや背景色を適用できる。
@@ -124,41 +132,43 @@ Shadow DOM のホスト要素全体にスタイルを適用できます。
 ```html
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-  <style>
-    custom-box.special {
-      color: red;
-    }
-  </style>
-</head>
-<body>
-  <custom-box class="special">特別なスタイル</custom-box>
-  <custom-box>通常のスタイル</custom-box>
-
-  <script>
-    class CustomBox extends HTMLElement {
-      constructor() {
-        super();
-        const shadow = this.attachShadow({ mode: "open" });
-        shadow.innerHTML = `
-          <style>
-            :host(.special) {
-              border: 3px solid red;
-              background-color: pink;
-            }
-            :host {
-              display: block;
-              padding: 10px;
-              border: 2px solid black;
-            }
-          </style>
-          <slot></slot>
-        `;
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      custom-box.special {
+        color: red;
       }
-    }
-    customElements.define("custom-box", CustomBox);
-  </script>
-</body>
+    </style>
+  </head>
+  <body>
+    <custom-box class="special">特別なスタイル</custom-box>
+    <custom-box>通常のスタイル</custom-box>
+
+    <script>
+      class CustomBox extends HTMLElement {
+        constructor() {
+          super();
+          const shadow = this.attachShadow({ mode: 'open' });
+          shadow.innerHTML = `
+            <style>
+              :host(.special) {
+                border: 3px solid red;
+                background-color: pink;
+              }
+              :host {
+                display: block;
+                padding: 10px;
+                border: 2px solid black;
+              }
+            </style>
+            <slot></slot>
+          `;
+        }
+      }
+      customElements.define('custom-box', CustomBox);
+    </script>
+  </body>
 </html>
 ```
 
@@ -186,22 +196,24 @@ Shadow DOM のホスト要素全体にスタイルを適用できます。
 ```html
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-  <style>
-    .dark-mode custom-box {
-      color: white;
-    }
-  </style>
-</head>
-<body class="dark-mode">
-  <custom-box>ダークモードのコンテンツ</custom-box>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      .dark-mode custom-box {
+        color: white;
+      }
+    </style>
+  </head>
+  <body class="dark-mode">
+    <custom-box>ダークモードのコンテンツ</custom-box>
 
-  <script>
-    class CustomBox extends HTMLElement {
-      constructor() {
-        super();
-        const shadow = this.attachShadow({ mode: "open" });
-        shadow.innerHTML = `
+    <script>
+      class CustomBox extends HTMLElement {
+        constructor() {
+          super();
+          const shadow = this.attachShadow({ mode: 'open' });
+          shadow.innerHTML = `
           <style>
             :host {
               display: block;
@@ -218,12 +230,13 @@ Shadow DOM のホスト要素全体にスタイルを適用できます。
           </style>
           <slot></slot>
         `;
+        }
       }
-    }
-    customElements.define("custom-box", CustomBox);
-  </script>
-</body>
+      customElements.define('custom-box', CustomBox);
+    </script>
+  </body>
 </html>
+
 ```
 - `<body class="dark-mode">` のとき、custom-box の背景が黒、テキストが白になる。
 - 親要素のクラスに応じてスタイルを変えたい場合に便利（例: dark-mode、mobile-view など）。
@@ -253,45 +266,68 @@ Shadow DOM のホスト要素全体にスタイルを適用できます。
 ### 使用例
 
 ```html
-<custom-toggle></custom-toggle>
-<button onclick="toggleState()">トグル</button>
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body class="dark-mode">
+    <custom-toggle></custom-toggle>
+    <button onclick="toggleState()">トグル</button>
 
-<script>
-  class CustomToggle extends HTMLElement {
-    static states = ["on", "off"];
+    <script>
+      class CustomToggle extends HTMLElement {
+        static observedAttributes = ['state'];
 
-    constructor() {
-      super();
-      this.attachShadow({ mode: "open" }).innerHTML = `
-        <style>
-          :host(:state(on)) {
-            background: green;
-            color: white;
+        constructor() {
+          super();
+          this.attachShadow({ mode: 'open' });
+          this.shadowRoot.innerHTML = `
+            <style>
+              :host([state="on"]) {
+                background: green;
+                color: white;
+              }
+              :host([state="off"]) {
+                background: gray;
+                color: black;
+              }
+              span {
+                display: inline-block;
+                padding: 10px 20px;
+                border-radius: 4px;
+                cursor: pointer;
+              }
+            </style>
+            <span>トグルスイッチ</span>
+          `;
+
+          this.toggleState = this.toggleState.bind(this);
+          this.state = 'off';
+        }
+
+        attributeChangedCallback(name, oldValue, newValue) {
+          if (name === 'state') {
+            console.log(`State changed to: ${newValue}`);
           }
-          :host(:state(off)) {
-            background: gray;
-            color: black;
-          }
-        </style>
-        <span>トグルスイッチ</span>
-      `;
+        }
 
-      this.toggleState = this.toggleState.bind(this);
-      this.state = "off";
-    }
+        toggleState() {
+          this.state = this.state === 'on' ? 'off' : 'on';
+          this.setAttribute('state', this.state);
+        }
+      }
 
-    toggleState() {
-      this.state = this.state === "on" ? "off" : "on";
-      this.requestStateUpdate();
-    }
-  }
+      customElements.define('custom-toggle', CustomToggle);
 
-  customElements.define("custom-toggle", CustomToggle);
+      function toggleState() {
+        document.querySelector('custom-toggle').toggleState();
+      }
+    </script>
+  </body>
+</html>
 
-  function toggleState() {
-    document.querySelector("custom-toggle").toggleState();
-  }
-</script>
 ```
 
 - :state(on) のときに緑色、:state(off) のときにグレーになる。
