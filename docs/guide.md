@@ -32,7 +32,6 @@
 - [Host-based CSS と Shadow DOM](./css/host-based-css-shadow-dom)
 - [Scoped CSS と Shadow DOM](./css/scoped-css-shadow-dom)
 - [CSS Variables を用いたテーマ管理](./css/css-variables-theming)
-- [Atomic Design と Web Components](./css/atomic-design-with-webcomponents)
 
 ## 4. ユースケース別パターン集
 
@@ -56,7 +55,7 @@
 - [State管理（VanillaJS or RxJS）](./architecture/state-management)
 - [Storybookによるドキュメント化](./architecture/storybook-docs)
 - [デザインとの共存（SCSS / CSS-in-JS）](./architecture/css-strategy)
-- [Atomic Design と Web Components の設計](./architecture/atomic-design-with-webcomponents)
+- [Atomic Design と Web Components の統合](./architecture/atomic-design-with-webcomponents)
 
 
 ## 7. 補足情報
