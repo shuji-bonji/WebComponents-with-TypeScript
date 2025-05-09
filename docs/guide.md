@@ -29,6 +29,7 @@
 
 ## 3. CSS設計とベストプラクティス
 - [BEM（Block Element Modifier）設計の基本](./css/bem-overview)
+- [Host-based CSS と Shadow DOM](./css/host-based-css-shadow-dom)
 - [Scoped CSS と Shadow DOM](./css/scoped-css-shadow-dom)
 - [CSS Variables を用いたテーマ管理](./css/css-variables-theming)
 - [Web Components と Atomic Design の連携](./css/atomic-design-with-webcomponents)

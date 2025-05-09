@@ -78,6 +78,7 @@ import { withMermaid } from 'vitepress-plugin-mermaid';
         text: 'CSS設計とベストプラクティス',
         items: [
           { text: 'BEM（Block Element Modifier）設計の基本', link: '/css/bem-overview' },
+          { text: 'Host-based CSS と Shadow DOM', link: '/css/host-based-css-shadow-dom' },
           { text: 'Scoped CSS と Shadow DOM', link: '/css/scoped-css-shadow-dom' },
           { text: 'CSS Variables を用いたテーマ管理', link: '/css/css-variables-theming' },
           { text: 'Web Components と Atomic Design の連携', link: '/css/atomic-design-with-webcomponents' },
