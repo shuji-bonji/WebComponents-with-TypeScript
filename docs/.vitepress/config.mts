@@ -108,7 +108,7 @@ import { withMermaid } from 'vitepress-plugin-mermaid';
           { text: 'State管理（VanillaJS or RxJS）', link: '/architecture/state-management' },
           { text: 'Storybookによるドキュメント化', link: '/architecture/storybook-docs' },
           { text: 'デザインとの共存（SCSS / CSS-in-JS）', link: '/architecture/css-strategy' },
-          { text: 'Atomic Design と Web Components の統合', link: '/architecture/atomic-design-and-webcomponents' },
+          { text: 'Atomic Design と Web Components の統合', link: '/architecture/atomic-design-with-webcomponents' },
         ]
       },
       {
