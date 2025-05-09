@@ -10,7 +10,6 @@
 - [Custom Element のライフサイクル](./concepts/custom-element-lifecycle) 
 - [Shadow DOM](./concepts/shadow-dom)
 - [HTML Templates](./concepts/html-templates)
-- [Slot](./concepts/slot)
 - [Template と Slot の連携](./concepts/template-slot-integration)
 - [ES Modules](./concepts/es-modules)
 - [Web標準としての位置づけ](./concepts/standards-position)

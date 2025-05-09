@@ -12,19 +12,20 @@ Web Components はこの課題に対し、**ブラウザに標準搭載された
 
 ## 🔹 主な構成要素（仕様）
 
-Web Components は次の4つの仕様を中心に構成されています。
+Web Components は次の5つの仕様を中心に構成されています。
 
 |要素|説明|
 |---|---|
 |[Custom Elements](./custom-elements)|任意の名前で HTML 要素を定義できる仕組み。独自タグ（例：`<my-button>`）を作成可能|
-|[Shadow DOM](./shadow-dom)|コンポーネント内部に閉じた DOM ツリーとスタイルスコープを提供し、外部のCSSやJSとの干渉を防義ます。|
+|[Shadow DOM](./shadow-dom)|コンポーネント内部に閉じた DOM ツリーとスタイルスコープを提供し、外部のCSSやJSとの干渉を防ぎます。|
 |[HTML Templates](./html-templates)|`<template>` 要素によって再利用可能な DOM 構造を定義し、動的に展開可能にする|
 |[Slot](./slot)|外部から内部へコンテンツを差し込む透過的な挿入ポイントを提供。Reactの`children`に類似|
+|[ES Modules](./es-modules)|モジュール単位でコードを分割・管理する標準仕様。Web Components の再利用を促進する|
 
 > [!NOTE]
-> かつては Web Components の 4 本柱の一つとして **ES Modules** が紹介されていましたが、現在では JavaScript の標準として広く普及しています。
-> そのため、Web Components 固有の構成要素としては「Slot」が主要なポジションを担うようになりました。
-> ただし、Web Components をモジュール化して再利用する場合、`ES Modules` は引き続き重要な技術です。
+> Web Components の 5 本柱として **ES Modules** を含みます。  
+> モジュール化することで Web Components の再利用性を高め、依存関係の解決を行います。  
+> 現在では JavaScript の標準として広く普及していますが、Web Components の一部として位置づけます。
 
 
 ## 🔹 Web 標準技術としての位置づけ
@@ -35,6 +36,7 @@ Web Components は、W3CおよびWHATWGにより標準化された技術であ�
 - [Shadow DOM - MDN](https://developer.mozilla.org/ja/docs/Web/Web_Components/Using_shadow_DOM)
 - [HTML Templates - MDN](https://developer.mozilla.org/ja/docs/Web/HTML/Element/template)
 - [Slot - MDN](https://developer.mozilla.org/ja/docs/Web/HTML/Element/slot)
+- [ES Modules - MDN](https://developer.mozilla.org/ja/docs/Web/JavaScript/Guide/Modules)
 
 
 ## 🔹 主なメリット

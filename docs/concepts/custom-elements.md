@@ -99,9 +99,9 @@ document.body.appendChild(myElement);
 ## 🔹 主な構成要素との関係
 Custom Elements は、以下の仕様と組み合わせて使われることで、真に再利用可能な Web UI 部品として機能します。
 
-- [Shadow DOM](/concepts/shadow-dom)
-- [HTML Templates](/concepts/html-templates)
-- [Slot](/concepts/slot)
+- [Shadow DOM](/concepts/shadow-dom.md)
+- [HTML Templates](/concepts/html-templates.md)
+- [Slot](/typescript/slots-and-projection.md)
 
 
 ## 🔹 カスタム要素の種類

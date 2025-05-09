@@ -57,7 +57,6 @@ import { withMermaid } from 'vitepress-plugin-mermaid';
           { text: 'Custom Element のライフサイクル', link: '/concepts/custom-element-lifecycle' }, 
           { text: 'Shadow DOM', link: '/concepts/shadow-dom' },
           { text: 'HTML Templates', link: '/concepts/html-templates' },
-          { text: 'Slot', link: '/concepts/slot' },
           { text: 'Template と Slot の連携', link: '/concepts/template-slot-integration' },
           { text: 'ES Modules', link: '/concepts/es-modules' },
           { text: 'Web標準としての位置づけ', link: '/concepts/standards-position' },
