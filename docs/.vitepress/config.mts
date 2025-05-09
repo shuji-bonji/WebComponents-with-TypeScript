@@ -81,7 +81,7 @@ import { withMermaid } from 'vitepress-plugin-mermaid';
           { text: 'Host-based CSS と Shadow DOM', link: '/css/host-based-css-shadow-dom' },
           { text: 'Scoped CSS と Shadow DOM', link: '/css/scoped-css-shadow-dom' },
           { text: 'CSS Variables を用いたテーマ管理', link: '/css/css-variables-theming' },
-          { text: 'Web Components と Atomic Design の連携', link: '/css/atomic-design-with-webcomponents' },
+          { text: 'Web Components と Atomic Design', link: '/css/atomic-design-with-webcomponents' },
         ]
       },
       {
@@ -109,7 +109,7 @@ import { withMermaid } from 'vitepress-plugin-mermaid';
           { text: 'State管理（VanillaJS or RxJS）', link: '/architecture/state-management' },
           { text: 'Storybookによるドキュメント化', link: '/architecture/storybook-docs' },
           { text: 'デザインとの共存（SCSS / CSS-in-JS）', link: '/architecture/css-strategy' },
-          { text: 'Atomic Design と Web Components の連携', link: '/architecture/atomic-design-and-webcomponents' },
+          { text: 'Atomic Design と Web Components の設計', link: '/architecture/atomic-design-and-webcomponents' },
         ]
       },
       {

@@ -1,4 +1,4 @@
-# Atomic Design と Web Components の連携
+# Atomic Design と Web Components の設計
 
 ## はじめに
 
@@ -155,6 +155,46 @@ class MoleculeSearchForm extends HTMLElement {
 customElements.define('molecule-search-form', MoleculeSearchForm);
 ```
 
+### Organisms
+- `<custom-search-bar>`
+- `<custom-navigation>`
+
+### Templates
+- `<custom-page-layout>`
+
+### Pages
+- `<custom-home-page>`
+- `<custom-settings-page>`
+
+## ディレクトリ構成例
+```
+/components
+├── atoms
+│   ├── button.ts
+│   └── icon.ts
+├── molecules
+│   ├── form-input.ts
+│   └── toggle-switch.ts
+├── organisms
+│   ├── search-bar.ts
+│   └── nav-menu.ts
+├── templates
+│   └── page-layout.ts
+└── pages
+    ├── home-page.ts
+    └── settings-page.ts
+```
+
+## 設計指針
+1. **Single Responsibility Principle (SRP)**
+2. **Component Isolation**
+3. **Data Flow Management**
+4. **Design Tokens の利用**
+
+## 課題と解決策
+- Shadow DOM によるテーマの制約 → `CSS Variables` を活用する
+- デザインシステムとの競合 → Design Tokens の導入
+- ステート管理の複雑さ → RxJS や Context API の併用
 
 ## 課題と制約
 1. **コンポーネントの境界が曖昧**  
@@ -163,7 +203,6 @@ customElements.define('molecule-search-form', MoleculeSearchForm);
    - Material Design などと整合性を取るのが難しい場合がある
 3. **Shadow DOM の制約**  
    - スタイルのカプセル化が一方で全体のテーマ変更を難しくする
-
 
 ## モダンな解決策
 1. **Component-Driven Development (CDD)**  
