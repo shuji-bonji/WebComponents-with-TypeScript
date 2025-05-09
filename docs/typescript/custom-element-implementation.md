@@ -1,4 +1,4 @@
-# クラスベースの Custom Elements の実装
+# Custom Elements の実装
 
 Web Components の主要な要素である **Custom Elements** は、クラスベースの構文を使用して定義されます。ここでは、**Autonomous Custom Elements** と **Customized Built-in Elements** の両方について、TypeScript を活用した実装を学びます。
 
@@ -106,7 +106,7 @@ customElements.define('lifecycle-component', LifecycleComponent);
 <lifecycle-component data-status="active"></lifecycle-component>
 ```
 
-## 🔹　カスタム要素タグの利用方法
+## 🔹 カスタム要素タグの利用方法
 
 HTML 要素の拡張には主に **2 つのパターン** があります。
 

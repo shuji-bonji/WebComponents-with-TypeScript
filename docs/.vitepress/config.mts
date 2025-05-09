@@ -68,7 +68,7 @@ import { withMermaid } from 'vitepress-plugin-mermaid';
         text: 'TypeScriptで Web Components の実装方法',
         items: [
           { text: 'Web Component の実装フロー', link: '/typescript/webcomponent-implementation-flow' },
-          { text: 'クラスでCustom Elementsを定義する', link: '/typescript/class-based-components' },
+          { text: 'Custom Elementsの実装', link: '/typescript/custom-element-implementation' },
           { text: 'ライフサイクルメソッドと型安全なイベント処理', link: '/typescript/lifecycle-and-events' },
           { text: 'Shadow DOM構造をTSで記述', link: '/typescript/shadow-dom-in-ts' },
           { text: '属性とプロパティのバインディング', link: '/typescript/attribute-property-binding' },

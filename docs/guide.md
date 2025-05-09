@@ -20,7 +20,7 @@
 ## 2. TypeScriptで Web Components の実装方法
 
 - [Web Component の実装フロー](./typescript/webcomponent-implementation-flow)
-- [クラスでCustom Elementsを定義する](./typescript/class-based-components)
+- [Custom Elementsの実装](./typescript/custom-element-implementation)
 - [ライフサイクルメソッドと型安全なイベント処理](./typescript/lifecycle-and-events)
 - [Shadow DOM構造をTSで記述](./typescript/shadow-dom-in-ts)
 - [属性とプロパティのバインディング](./typescript/attribute-property-binding)

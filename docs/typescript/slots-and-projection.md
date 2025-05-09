@@ -1,7 +1,7 @@
 # Slots と Content Projection の型付け
 
 ## 概要
-`<slot>` 要素は、親要素から子要素へのコンテンツ投影（Content Projection）を可能にし、Web Component の柔軟な再利用を実現します。  
+Slot要素は、親要素から子要素へのコンテンツ投影（Content Projection）を可能にし、Web Component の柔軟な再利用を実現します。  
 TypeScript を使うことで、型安全なスロット操作が可能になります。
 
 ## 基本構造

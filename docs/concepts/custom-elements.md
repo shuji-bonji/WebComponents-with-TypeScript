@@ -110,7 +110,7 @@ Web Components のカスタム要素には、以下の 2 種類があります�
 - **Autonomous Custom Elements**: 完全に新しいタグ名として定義される要素です。
 - **Customized Built-in Elements**: 既存の HTML 要素を拡張して新しい機能を追加する要素です。
 
-詳細な実装については [HTMLElement の拡張とカスタマイズ](../typescript/extend-htmlelement.md) を参照してください。
+詳細な実装については [Custom Elementsの実装](../typescript/custom-element-implementation.md) を参照してください。
 
 
 ## 🔹 まとめ
