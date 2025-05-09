@@ -1,104 +1,191 @@
-# Slots と Content Projection の型付け
+# Slots と content の 投影(Projection)
 
-## 概要
-Slot要素は、親要素から子要素へのコンテンツ投影（Content Projection）を可能にし、Web Component の柔軟な再利用を実現します。  
-TypeScript を使うことで、型安全なスロット操作が可能になります。
+## Slotの基本
 
-## 基本構造
-以下は基本的なスロットの例です。
+Slotは、Shadow DOM 内部に外部の DOM 要素（Light DOM）を挿入するための仕組みです。基本的な使い方として、以下のようなコードを考えてみましょう。
 
 ```html
-<my-card>
-  <h2 slot="header">タイトル</h2>
-  <p slot="content">これは内容です。</p>
-</my-card>
+<custom-element>
+  <p>この内容はスロットに挿入されます。</p>
+</custom-element>
 ```
 
 ```typescript
-// MyCard.ts
-class MyCard extends HTMLElement {
+class CustomElement extends HTMLElement {
   constructor() {
     super();
-    this.attachShadow({ mode: 'open' });
+    const shadow = this.attachShadow({ mode: 'open' });
+    shadow.innerHTML = `
+      <slot></slot>
+    `;
   }
+}
 
-  connectedCallback() {
-    this.shadowRoot!.innerHTML = `
-      <style>
-        ::slotted(h2) {
-          color: #007acc;
-        }
-      </style>
+customElements.define('custom-element', CustomElement);
+```
+
+この場合、`<slot></slot>` の部分に `<custom-element>` 内の `<p>` 要素が挿入されます。
+
+
+## 名前付きSlot
+
+複数の要素を整理するために、名前付きのスロットを使用することができます。
+
+```html
+<custom-element>
+  <span slot="header">ヘッダー部分</span>
+  <p slot="content">コンテンツ部分</p>
+</custom-element>
+```
+
+```typescript
+class NamedSlots extends HTMLElement {
+  constructor() {
+    super();
+    const shadow = this.attachShadow({ mode: 'open' });
+    shadow.innerHTML = `
       <slot name="header"></slot>
       <slot name="content"></slot>
     `;
   }
 }
 
-customElements.define('my-card', MyCard);
+customElements.define('named-slots', NamedSlots);
 ```
 
-## デフォルトスロットと名前付きスロット
-- **デフォルトスロット**：名前がないスロット
-- **名前付きスロット**：`name` 属性で識別されるスロット
+
+## Fallback Content
+
+Slotが埋められなかった場合に、デフォルトの内容を表示することが可能です。
 
 ```html
-<my-card>
-  <p>これはデフォルトスロットに表示されます。</p>
-  <p slot="content">これは名前付きスロットに表示されます。</p>
-</my-card>
+<custom-element></custom-element>
 ```
 
-## TypeScript による型付け
-スロットの型を明確にすることで、IDE の補完機能が強化されます。
+```typescript
+class FallbackSlot extends HTMLElement {
+  constructor() {
+    super();
+    const shadow = this.attachShadow({ mode: 'open' });
+    shadow.innerHTML = `
+      <slot>デフォルトの内容です。</slot>
+    `;
+  }
+}
+
+customElements.define('fallback-slot', FallbackSlot);
+```
+
+この場合、外部からの要素が提供されない場合は `デフォルトの内容です。` が表示されます。
+
+
+## 動的なSlot操作
+
+JavaScriptを用いて動的にSlotの内容を変更することも可能です。
 
 ```typescript
-const header = this.shadowRoot?.querySelector('slot[name="header"]') as HTMLSlotElement;
-header.addEventListener('slotchange', () => {
-  const nodes = header.assignedNodes({ flatten: true });
-  console.log(nodes); // slot 内のノードがリストアップされる
+const slot = document.querySelector('slot');
+
+slot.addEventListener('slotchange', () => {
+  console.log('Slot content changed!');
+});
+
+// 内容を動的に追加
+const content = document.createElement('div');
+content.textContent = '新しいコンテンツ';
+document.querySelector('custom-element')?.appendChild(content);
+```
+
+
+## Shadow DOMとSlotの連携
+
+Shadow DOM内部で `<slot>` は外部の Light DOM 要素と連動しています。例えば、次のような実装を考えてみます。
+
+```html
+<custom-shadow>
+  <p slot="content">ライトDOMの内容</p>
+</custom-shadow>
+```
+
+```typescript
+class CustomShadow extends HTMLElement {
+  constructor() {
+    super();
+    const shadow = this.attachShadow({ mode: 'open' });
+    shadow.innerHTML = `
+      <div>
+        Shadow DOM内部
+        <slot name="content"></slot>
+      </div>
+    `;
+  }
+}
+
+customElements.define('custom-shadow', CustomShadow);
+```
+
+結果として、Shadow DOM内部にある `<slot name="content">` に、Light DOMの内容が映し出されます。
+
+
+## イベント伝搬とSlot
+
+Shadow DOMにおいて、イベントはデフォルトではバブリングしません。ただし、イベントのオプションで `composed: true` を指定することで、Shadow DOMを超えて伝搬させることができます。
+
+```typescript
+const button = document.querySelector('button');
+
+button?.addEventListener('click', (e) => {
+  console.log(e.composed); // true
 });
 ```
 
-## 複数スロットの管理
-複数のスロットを扱う場合も、名前付きスロットで簡単に管理できます。
+### Mermaidによるフロー図
+
+```mermaid
+flowchart TD
+    LightDOM -->|Shadow Boundary| ShadowDOM
+    ShadowDOM -->|composed: false| Stopped
+    ShadowDOM -->|composed: true| LightDOM
+```
+
+
+## slotchange イベントの監視
+
+Slotの内容が変化した場合、`slotchange` イベントが発火します。
 
 ```typescript
-class AdvancedCard extends HTMLElement {
+const slot = document.querySelector('slot');
+
+slot?.addEventListener('slotchange', () => {
+  console.log('Slot content has been updated!');
+});
+```
+
+
+## 実践例
+
+### 複数Slotの切り替え
+
+```html
+<custom-multi-slot>
+  <h1 slot="title">タイトル</h1>
+  <p slot="description">説明文</p>
+</custom-multi-slot>
+```
+
+```typescript
+class MultiSlotElement extends HTMLElement {
   constructor() {
     super();
-    this.attachShadow({ mode: 'open' });
-  }
-
-  connectedCallback() {
-    this.shadowRoot!.innerHTML = `
-      <slot name="header"></slot>
-      <slot name="content"></slot>
-      <slot name="footer"></slot>
+    const shadow = this.attachShadow({ mode: 'open' });
+    shadow.innerHTML = `
+      <slot name="title"></slot>
+      <slot name="description"></slot>
     `;
   }
 }
 
-customElements.define('advanced-card', AdvancedCard);
+customElements.define('custom-multi-slot', MultiSlotElement);
 ```
 
-```html
-<advanced-card>
-  <h2 slot="header">ヘッダー</h2>
-  <p slot="content">コンテンツ部分</p>
-  <footer slot="footer">フッター部分</footer>
-</advanced-card>
-```
-
-## 注意点
-1. **スロット内のスタイル適用**
-   - Shadow DOM の影響で、外部 CSS は影響を受けない。
-   - スロット化された要素には `::slotted` セレクターを使用。
-
-2. **動的スロットの制御**
-   - 動的にスロットの内容を変更する場合、`slotchange` イベントのハンドリングが必要。
-
-## まとめ
-- Web Components のスロットは、外部からのコンテンツ挿入を安全に行う手段です。
-- TypeScript の型付けで開発効率が上がり、IDE の補完が強化されます。
-- 名前付きスロットとデフォルトスロットの使い分けで、複雑なレイアウトも容易に実現できます。
+各Slotが正しく切り替わり、表示されることを確認できます。

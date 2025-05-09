@@ -25,7 +25,7 @@
 - [Shadow DOM構造をTSで記述](./typescript/shadow-dom-in-ts)
 - [属性とプロパティのバインディング](./typescript/attribute-property-binding)
 - [props/attributesのバインディングと型変換](./typescript/props-and-attributes)
-- [slotsとcontent projectionの型付け](./typescript/slots-and-projection)
+- [slotsとcontentの投影](./typescript/slots-and-projection)
 
 
 ## 3. CSS設計とベストプラクティス

@@ -72,7 +72,7 @@ import { withMermaid } from 'vitepress-plugin-mermaid';
           { text: 'ライフサイクルメソッドと型安全なイベント処理', link: '/typescript/lifecycle-and-events' },
           { text: 'Shadow DOM構造をTSで記述', link: '/typescript/shadow-dom-in-ts' },
           { text: '属性とプロパティのバインディング', link: '/typescript/attribute-property-binding' },
-          { text: 'slotsとcontent projectionの型付け', link: '/typescript/slots-and-projection' },
+          { text: 'slotsとcontentの投影', link: '/typescript/slots-and-projection' },
         ]
       },
       {
