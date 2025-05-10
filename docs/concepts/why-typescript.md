@@ -129,6 +129,83 @@ Web Components の開発において、TypeScript の型安全性は非常に強
 
    customElements.define("my-input", MyInput);
    ```
+### TypeScriptによる具体的なメリット
+
+1. **属性と型の連携**
+   - HTML属性からTypeScriptの型へ安全な変換を保証できます
+   - 不正な値が設定された場合、コンパイル時に検出可能
+
+   ```typescript
+   // 属性の型安全な使用例
+   get size(): 'small' | 'medium' | 'large' {
+     const size = this.getAttribute('size');
+     return (size === 'small' || size === 'large') ? size : 'medium';
+   }
+   ```
+
+2. **イベントの型定義**
+   - カスタムイベントにも詳細な型付けが可能になります
+   - イベントデータの構造が明確になり、利用側でも型の恩恵を受けられます
+
+   ```typescript
+   // 型付きカスタムイベント
+   interface ToggleEventDetail {
+     checked: boolean;
+     timestamp: number;
+   }
+   
+   // イベント発火
+   this.dispatchEvent(new CustomEvent<ToggleEventDetail>('toggle', {
+     detail: { checked: true, timestamp: Date.now() },
+     bubbles: true
+   }));
+   
+   // イベントリスナー側での型安全な受け取り
+   element.addEventListener('toggle', (e: CustomEvent<ToggleEventDetail>) => {
+     console.log(`状態: ${e.detail.checked}, 時刻: ${e.detail.timestamp}`);
+   });
+   ```
+
+3. **Shadow DOMの型付け**
+   - Shadow DOM内の要素に対しても型安全な操作が可能
+   - 要素の存在チェックや型キャストが簡潔に記述できます
+
+   ```typescript
+   // Shadow DOM内の要素への型安全なアクセス
+   const button = this.shadowRoot?.querySelector('button') as HTMLButtonElement;
+   if (button) {
+     button.addEventListener('click', this.handleClick);
+   }
+   ```
+
+4. **継承と合成を活用した再利用可能なコンポーネント**
+   - 抽象クラスやインターフェースを使った基底コンポーネントの作成
+   - 共通の機能をベースクラスに集約し、派生クラスで拡張できます
+
+   ```typescript
+   // 基本的なフォーム要素の抽象クラス
+   abstract class BaseFormElement extends HTMLElement {
+     abstract validate(): boolean;
+     abstract getValue(): string;
+     
+     reportValidity(): void {
+       const isValid = this.validate();
+       // 共通のバリデーション表示ロジック
+     }
+   }
+   
+   // 具体的な実装
+   class CustomInput extends BaseFormElement {
+     validate(): boolean {
+       // 具体的な検証ロジック
+       return true;
+     }
+     
+     getValue(): string {
+       return this.shadowRoot?.querySelector('input')?.value || '';
+     }
+   }
+   ```
 
 ## 🔹 まとめ
 - TypeScript は Web Components の開発を型安全にし、バグの発生を未然に防ぎます。
