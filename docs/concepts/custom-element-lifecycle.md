@@ -47,6 +47,8 @@ customElements.define('connected-component', ConnectedComponent);
 
 ```ts
 class DisconnectedComponent extends HTMLElement {
+  private timer: number;
+
   connectedCallback() {
     this.timer = setInterval(() => {
       console.log("動作中...");

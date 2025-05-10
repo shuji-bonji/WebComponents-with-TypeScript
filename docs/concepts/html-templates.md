@@ -7,7 +7,7 @@
 ## HTML Templates の特徴
 
 - ページロード時には描画されない（非表示）
-- avaScript で cloneNode(true) して使用可能
+- JavaScript で cloneNode(true) して使用可能
 - スクリプトやスタイルは document.createElement() よりも直感的に定義できる
 - Shadow DOM や Web Components と組み合わせると便利
 
