@@ -36,6 +36,45 @@ customElements.define('connected-component', ConnectedComponent);
 <connected-component></connected-component>
 ```
 
+### 実用例: 初期データの読み込み
+
+```ts
+class DataLoader extends HTMLElement {
+  private _data: any[] = [];
+  
+  connectedCallback() {
+    // DOM追加時にデータ取得を開始
+    this.innerHTML = `<div class="loader">データを読み込み中...</div>`;
+    this.fetchData();
+  }
+  
+  async fetchData() {
+    try {
+      const response = await fetch('https://api.example.com/data');
+      this._data = await response.json();
+      this.render();
+    } catch (error) {
+      this.innerHTML = `<div class="error">データの読み込みに失敗しました</div>`;
+    }
+  }
+  
+  render() {
+    if (this._data.length === 0) {
+      this.innerHTML = `<div class="empty">データがありません</div>`;
+      return;
+    }
+    
+    this.innerHTML = `
+      <ul class="data-list">
+        ${this._data.map(item => `<li>${item.name}</li>`).join('')}
+      </ul>
+    `;
+  }
+}
+
+customElements.define('data-loader', DataLoader);
+```
+
 
 ## 📌 disconnectedCallback()
 このメソッドは、要素が DOM ツリーから削除された際に呼ばれます。  
@@ -68,6 +107,55 @@ customElements.define('disconnected-component', DisconnectedComponent);
 <disconnected-component></disconnected-component>
 ```
 
+### 実用例: リソース解放とメモリリーク防止
+
+```ts
+class VideoPlayer extends HTMLElement {
+  private videoElement: HTMLVideoElement | null = null;
+  private resizeObserver: ResizeObserver | null = null;
+  
+  connectedCallback() {
+    // ビデオ要素の作成と設定
+    this.videoElement = document.createElement('video');
+    this.videoElement.src = this.getAttribute('src') || '';
+    this.videoElement.controls = true;
+    this.appendChild(this.videoElement);
+    
+    // イベントリスナーの追加
+    this.videoElement.addEventListener('play', this.handlePlay);
+    
+    // ResizeObserverの設定
+    this.resizeObserver = new ResizeObserver(this.handleResize);
+    this.resizeObserver.observe(this);
+  }
+  
+  disconnectedCallback() {
+    // イベントリスナーの解除
+    if (this.videoElement) {
+      this.videoElement.removeEventListener('play', this.handlePlay);
+      this.videoElement.pause();
+      this.videoElement.src = ''; // メモリ解放
+    }
+    
+    // ResizeObserverの解除
+    if (this.resizeObserver) {
+      this.resizeObserver.disconnect();
+      this.resizeObserver = null;
+    }
+  }
+  
+  private handlePlay = () => {
+    console.log('動画の再生を開始しました');
+  }
+  
+  private handleResize = (entries: ResizeObserverEntry[]) => {
+    console.log('サイズが変更されました:', entries[0].contentRect);
+  }
+}
+
+customElements.define('video-player', VideoPlayer);
+```
+
 
 ## 📌 adoptedCallback()
 このメソッドは、要素が別の `Document` に移動された際に呼ばれます。  
@@ -81,6 +169,47 @@ class AdoptedComponent extends HTMLElement {
 }
 
 customElements.define('adopted-component', AdoptedComponent);
+```
+
+### 実用例: クロスフレームの状態維持
+
+```ts
+class CrossFrameComponent extends HTMLElement {
+  private state = {
+    counter: 0,
+    lastUpdated: new Date()
+  };
+  
+  connectedCallback() {
+    this.render();
+  }
+  
+  adoptedCallback() {
+    // 新しいドキュメントに移動したときに状態を更新
+    this.state.lastUpdated = new Date();
+    this.state.counter++;
+    this.render();
+    
+    // 移動イベントを発火
+    this.dispatchEvent(new CustomEvent('adopted', {
+      detail: { state: this.state },
+      bubbles: true,
+      composed: true
+    }));
+  }
+  
+  render() {
+    this.innerHTML = `
+      <div class="cross-frame">
+        <p>カウンター: ${this.state.counter}</p>
+        <p>最終更新: ${this.state.lastUpdated.toLocaleString()}</p>
+        <p>現在のドキュメント: ${document.title || 'メインドキュメント'}</p>
+      </div>
+    `;
+  }
+}
+
+customElements.define('cross-frame', CrossFrameComponent);
 ```
 
 
@@ -153,6 +282,7 @@ stateDiagram-v2
 
 ## 🔹 まとめ
 - Custom Elements はライフサイクルメソッドを持ち、DOM の変更に応じて処理を行える。
-- `connectedCallback` と `disconnectedCallback` は主にイベントリスナーの登録・解除に使われる。
-- `attributeChangedCallback` は監視する属性を明示的に設定する必要がある。
-- ライフサイクルを理解することで、より効率的で管理しやすいコンポーネント設計が可能。
+- `connectedCallback` と `disconnectedCallback` は主にイベントリスナーの登録・解除やリソース管理に使われる。
+- `attributeChangedCallback` は監視する属性を明示的に設定し、属性の変更に応じて要素の挙動やスタイルを動的に更新できる。
+- `adoptedCallback` は異なるドキュメント間での要素の移動時に状態を維持するのに使用できる。
+- ライフサイクルを適切に活用することで、より効率的で管理しやすく、リソースリークがないコンポーネント設計が可能。

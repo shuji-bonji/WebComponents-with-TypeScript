@@ -4,6 +4,22 @@
 HTML の拡張として、自分だけのタグを作成し、DOM に追加できるため、  
 再利用性が高く、保守性の良い UI コンポーネントの作成が可能です。
 
+
+> [!NOTE]
+> **補足: HTML タグ、要素、HTMLElement の違い**
+> 
+> | 概念 | 説明 | 例  |
+> |---|---|---|
+> | **タグ**    | HTML のマークアップに使用する要素の宣言部分<br> `<p>`, `<div>`, `<my-element>` など | `<my-element></my-element>` |
+> | **要素**    | タグとその内部のコンテンツを含む、HTML ドキュメント内の構造体 | `<p>これは段落です。</p>` |
+> | **HTMLElement** | JavaScript で操作するためのオブジェクト。`document.createElement`で生成される | `const el = document.createElement('div');` |
+> 
+> - タグは「定義された要素」を HTML マークアップに表現するもの。
+> - 要素はタグ＋コンテンツ。
+> - HTMLElement は要素を操作するための JavaScript オブジェクト。
+> - カスタム要素は「クラス → タグ → 要素」の流れで生成される。
+
+
 ## 🔹 なぜ Custom Elements が重要か？
 
 - UI部品をカプセル化し、再利用可能な形で構築できる
@@ -118,17 +134,3 @@ Web Components のカスタム要素には、以下の 2 種類があります�
 - Autonomous と Customized の 2 種類が存在します。
 - `customElements.define()` を使って登録後、HTML 内や JavaScript で利用可能です。
 - 他の Web Components の仕様（Shadow DOM、HTML Templates、Slot）と密接に連携できます。
-
-
-## 🔹 補足: HTML タグ、要素、HTMLElement の違い
-
-| 概念 | 説明 | 例  |
-|---|---|---|
-| **タグ**    | HTML のマークアップに使用する要素の宣言部分<br> `<p>`, `<div>`, `<my-element>` など | `<my-element></my-element>` |
-| **要素**    | タグとその内部のコンテンツを含む、HTML ドキュメント内の構造体 | `<p>これは段落です。</p>` |
-| **HTMLElement** | JavaScript で操作するためのオブジェクト。`document.createElement`で生成される | `const el = document.createElement('div');` |
-
-- タグは「定義された要素」を HTML マークアップに表現するもの。
-- 要素はタグ＋コンテンツ。
-- HTMLElement は要素を操作するための JavaScript オブジェクト。
-- カスタム要素は「クラス → タグ → 要素」の流れで生成される。
