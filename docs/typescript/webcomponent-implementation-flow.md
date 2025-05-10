@@ -147,7 +147,7 @@ flowchart TB
         CS[CSS]
     end
     Template --->|cloneNode で複製| CustomElement
-    Template --->|3.2\. Shadow Root に適用| SH
+    Template --->|3.2. Shadow Root に適用| SH
     SL --->|6\. 外部要素の挿入| SH
     CS --->|5\. CSS 定義| SH
 
@@ -161,7 +161,7 @@ flowchart TB
         I[カスタムイベント]
         C@{ shape: circle, label: "3" }
         E@{ shape: circle, label: "4" }
-        C -->|"3.1\. attachShadow() で Shadow Root 作成"| SH
+        C -->|"3.1. attachShadow() で Shadow Root 作成"| SH
         E -->|メソッドの定義| M
         E -->|カスタムイベントの定義| I
     end
