@@ -129,85 +129,142 @@ Web Components の開発において、TypeScript の型安全性は非常に強
 
    customElements.define("my-input", MyInput);
    ```
-### TypeScriptによる具体的なメリット
 
-1. **属性と型の連携**
-   - HTML属性からTypeScriptの型へ安全な変換を保証できます
-   - 不正な値が設定された場合、コンパイル時に検出可能
+## 🔹 TypeScriptによる Web Components の具体的なメリット
 
-   ```typescript
-   // 属性の型安全な使用例
-   get size(): 'small' | 'medium' | 'large' {
-     const size = this.getAttribute('size');
-     return (size === 'small' || size === 'large') ? size : 'medium';
-   }
-   ```
+### 📌 属性と型の連携
+HTML属性からTypeScriptの型へ安全な変換を保証できます。不正な値が設定された場合、コンパイル時に検出可能です。
 
-2. **イベントの型定義**
-   - カスタムイベントにも詳細な型付けが可能になります
-   - イベントデータの構造が明確になり、利用側でも型の恩恵を受けられます
+```typescript
+// 属性の型安全な使用例
+class SizeComponent extends HTMLElement {
+  // リテラル型で明示的に許容値を定義
+  get size(): 'small' | 'medium' | 'large' {
+    const size = this.getAttribute('size');
+    return (size === 'small' || size === 'large') ? size : 'medium';
+  }
+  
+  connectedCallback() {
+    // 型に基づいたスタイル適用
+    this.classList.add(`size-${this.size}`);
+  }
+}
+```
 
-   ```typescript
-   // 型付きカスタムイベント
-   interface ToggleEventDetail {
-     checked: boolean;
-     timestamp: number;
-   }
-   
-   // イベント発火
-   this.dispatchEvent(new CustomEvent<ToggleEventDetail>('toggle', {
-     detail: { checked: true, timestamp: Date.now() },
-     bubbles: true
-   }));
-   
-   // イベントリスナー側での型安全な受け取り
-   element.addEventListener('toggle', (e: CustomEvent<ToggleEventDetail>) => {
-     console.log(`状態: ${e.detail.checked}, 時刻: ${e.detail.timestamp}`);
-   });
-   ```
+### 📌 イベントの型定義
+カスタムイベントにも詳細な型付けが可能になり、イベントデータの構造が明確になります。利用側でも型の恩恵を受けられます。
 
-3. **Shadow DOMの型付け**
-   - Shadow DOM内の要素に対しても型安全な操作が可能
-   - 要素の存在チェックや型キャストが簡潔に記述できます
+```typescript
+// 型付きカスタムイベント
+interface ToggleEventDetail {
+  checked: boolean;
+  timestamp: number;
+}
 
-   ```typescript
-   // Shadow DOM内の要素への型安全なアクセス
-   const button = this.shadowRoot?.querySelector('button') as HTMLButtonElement;
-   if (button) {
-     button.addEventListener('click', this.handleClick);
-   }
-   ```
+class ToggleSwitch extends HTMLElement {
+  private toggleState() {
+    const isChecked = this.hasAttribute('checked');
+    
+    // イベント発火
+    this.dispatchEvent(new CustomEvent<ToggleEventDetail>('toggle', {
+      detail: { 
+        checked: !isChecked,
+        timestamp: Date.now() 
+      },
+      bubbles: true
+    }));
+    
+    // 状態の更新
+    if (isChecked) {
+      this.removeAttribute('checked');
+    } else {
+      this.setAttribute('checked', '');
+    }
+  }
+}
 
-4. **継承と合成を活用した再利用可能なコンポーネント**
-   - 抽象クラスやインターフェースを使った基底コンポーネントの作成
-   - 共通の機能をベースクラスに集約し、派生クラスで拡張できます
+// イベントリスナー側での型安全な受け取り
+document.querySelector('toggle-switch')?.addEventListener('toggle', 
+  (e: CustomEvent<ToggleEventDetail>) => {
+    console.log(`状態: ${e.detail.checked}, 時刻: ${e.detail.timestamp}`);
+  }
+);
+```
 
-   ```typescript
-   // 基本的なフォーム要素の抽象クラス
-   abstract class BaseFormElement extends HTMLElement {
-     abstract validate(): boolean;
-     abstract getValue(): string;
-     
-     reportValidity(): void {
-       const isValid = this.validate();
-       // 共通のバリデーション表示ロジック
-     }
-   }
-   
-   // 具体的な実装
-   class CustomInput extends BaseFormElement {
-     validate(): boolean {
-       // 具体的な検証ロジック
-       return true;
-     }
-     
-     getValue(): string {
-       return this.shadowRoot?.querySelector('input')?.value || '';
-     }
-   }
-   ```
+### 📌 Shadow DOMの型付け
+Shadow DOM内の要素に対しても型安全な操作が可能となり、要素の存在チェックや型キャストが簡潔に記述できます。
+
+```typescript
+// Shadow DOM内の要素への型安全なアクセス
+class TypedComponent extends HTMLElement {
+  private updateButton(label: string): void {
+    const button = this.shadowRoot?.querySelector('button') as HTMLButtonElement | null;
+    
+    if (button) {
+      button.textContent = label;
+      button.addEventListener('click', this.handleClick);
+    } else {
+      console.warn('Button element not found in shadow DOM');
+    }
+  }
+  
+  private handleClick = (e: MouseEvent): void => {
+    // 型付きのイベントオブジェクト
+    const target = e.currentTarget as HTMLButtonElement;
+    console.log(`Button clicked: ${target.textContent}`);
+  }
+}
+```
+
+### 📌 継承と合成を活用した再利用可能なコンポーネント
+抽象クラスやインターフェースを使った基底コンポーネントの作成により、共通の機能をベースクラスに集約し、派生クラスで拡張できます。
+
+```typescript
+// 基本的なフォーム要素の抽象クラス
+abstract class BaseFormElement extends HTMLElement {
+  abstract validate(): boolean;
+  abstract getValue(): string;
+  
+  // 共通メソッド
+  reportValidity(): void {
+    const isValid = this.validate();
+    
+    if (!isValid) {
+      this.classList.add('invalid');
+      this.dispatchEvent(new CustomEvent('invalid', {
+        bubbles: true
+      }));
+    } else {
+      this.classList.remove('invalid');
+    }
+  }
+}
+
+// 具体的な実装
+class CustomInput extends BaseFormElement {
+  validate(): boolean {
+    const input = this.shadowRoot?.querySelector('input');
+    // 具体的な検証ロジック
+    return input?.value.length > 0 ?? false;
+  }
+  
+  getValue(): string {
+    return this.shadowRoot?.querySelector('input')?.value || '';
+  }
+  
+  // 独自の追加機能
+  clear(): void {
+    const input = this.shadowRoot?.querySelector('input');
+    if (input) input.value = '';
+  }
+}
+
+customElements.define('custom-input', CustomInput);
+```
 
 ## 🔹 まとめ
 - TypeScript は Web Components の開発を型安全にし、バグの発生を未然に防ぎます。
 - カスタム要素の定義、イベントの管理、属性のバインディングすべてが型で保証されるため、開発効率が向上します。
+- 継承や抽象化などのオブジェクト指向パターンを活用して、再利用可能なコンポーネントライブラリを構築できます。
+- Shadow DOM内の操作も型安全に行えるため、より堅牢なコンポーネントを実装できます。
 - また、リファクタリングも安全かつ効率的に行えるため、大規模プロジェクトでも安心して採用できます。
