@@ -8,7 +8,6 @@
 E2E（End-to-End）テストは、アプリケーション全体をエンドユーザーの視点からシミュレートし、システムの動作を検証する手法です。  
 Web Components の場合、カスタム要素の表示、操作、イベント発火が期待通りに動作するかを確認します。
 
----
 
 ## 2. Playwright のセットアップ
 
@@ -24,7 +23,6 @@ npm install -D playwright
 npx playwright install
 ```
 
----
 
 ## 3. 基本的なテストの実装
 
@@ -43,7 +41,6 @@ test('WebComponentのレンダリングテスト', async ({ page }) => {
 - `page.goto`: 指定した URL にアクセスします。
 - `$`: 要素をセレクタで取得します。
 
----
 
 ## 4. Shadow DOM のテスト
 
@@ -58,7 +55,6 @@ test('Shadow DOM 内のテキスト確認', async ({ page }) => {
 });
 ```
 
----
 
 ## 5. 複数コンポーネントの相互作用テスト
 
@@ -75,7 +71,6 @@ test('複数コンポーネントの連携テスト', async ({ page }) => {
 });
 ```
 
----
 
 ## 6. CI/CD への統合
 
@@ -107,7 +102,6 @@ jobs:
       - run: npx playwright test
 ```
 
----
 
 ## 7. ベストプラクティス
 
