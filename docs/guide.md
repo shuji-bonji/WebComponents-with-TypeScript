@@ -44,23 +44,23 @@
 
 ## 5. テストとデバッグ
 
-- [Unit Test（Jest / Web Test Runner）](./testing/unit-testing)
+- [Unit Test（Vitest / Web Test Runner）](./testing/unit-testing)
 - [Shadow DOM内の要素テスト](./testing/shadow-dom-testing)
 - [E2Eテスト事例（Playwrightなど）](./testing/e2e-testing)
 
 
 ## 6. 実践アーキテクチャ
 
-- [PWAとの連携（Service Worker含む）](./architecture/pwa-integration)
+<!-- - [PWAとの連携（Service Worker含む）](./architecture/pwa-integration)
 - [State管理（VanillaJS or RxJS）](./architecture/state-management)
 - [Storybookによるドキュメント化](./architecture/storybook-docs)
 - [デザインとの共存（SCSS / CSS-in-JS）](./architecture/css-strategy)
-- [Atomic Design と Web Components の統合](./architecture/atomic-design-with-webcomponents)
+- [Atomic Design と Web Components の統合](./architecture/atomic-design-with-webcomponents) -->
 
 
 ## 7. 補足情報
 
-- [Litなどのライブラリとの比較](./extras/lit-vs-native)
+<!-- - [Litなどのライブラリとの比較](./extras/lit-vs-native)
 - [他のframeworkとの共存](./extras/framework-integration)
 - [ポータビリティとWeb標準主義](./extras/portability-and-standards)
-- [TSでの属性→プロパティ型変換Tips](./extras/ts-attribute-tips)
+- [TSでの属性→プロパティ型変換Tips](./extras/ts-attribute-tips) -->

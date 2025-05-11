@@ -96,29 +96,29 @@ import { withMermaid } from 'vitepress-plugin-mermaid';
       {
         text: 'テストとデバッグ',
         items: [
-          { text: 'Unit Test（Jest / Web Test Runner）', link: '/testing/unit-testing' },
+          { text: 'Unit Test（Vitest / Web Test Runner）', link: '/testing/unit-testing' },
           { text: 'Shadow DOM内の要素テスト', link: '/testing/shadow-dom-testing' },
           { text: 'E2Eテスト事例（Playwrightなど）', link: '/testing/e2e-testing' },
         ]
       },
       {
         text: '実践アーキテクチャ',
-        items: [
-          { text: 'PWAとの連携（Service Worker含む）', link: '/architecture/pwa-integration' },
-          { text: 'State管理（VanillaJS or RxJS）', link: '/architecture/state-management' },
-          { text: 'Storybookによるドキュメント化', link: '/architecture/storybook-docs' },
-          { text: 'デザインとの共存（SCSS / CSS-in-JS）', link: '/architecture/css-strategy' },
-          { text: 'Atomic Design と Web Components の統合', link: '/architecture/atomic-design-with-webcomponents' },
-        ]
+        // items: [
+        //   { text: 'PWAとの連携（Service Worker含む）', link: '/architecture/pwa-integration' },
+        //   { text: 'State管理（VanillaJS or RxJS）', link: '/architecture/state-management' },
+        //   { text: 'Storybookによるドキュメント化', link: '/architecture/storybook-docs' },
+        //   { text: 'デザインとの共存（SCSS / CSS-in-JS）', link: '/architecture/css-strategy' },
+        //   { text: 'Atomic Design と Web Components の統合', link: '/architecture/atomic-design-with-webcomponents' },
+        // ]
       },
       {
         text: '補足情報',
-        items: [
-          { text: 'Litなどのライブラリとの比較', link: '/extras/lit-vs-native' },
-          { text: '他のframeworkとの共存', link: '/extras/framework-integration' },
-          { text: 'ポータビリティとWeb標準主義', link: '/extras/portability-and-standards' },
-          { text: 'TSでの属性→プロパティ型変換Tips', link: '/extras/ts-attribute-tips' },
-        ]
+        // items: [
+        //   { text: 'Litなどのライブラリとの比較', link: '/extras/lit-vs-native' },
+        //   { text: '他のframeworkとの共存', link: '/extras/framework-integration' },
+        //   { text: 'ポータビリティとWeb標準主義', link: '/extras/portability-and-standards' },
+        //   { text: 'TSでの属性→プロパティ型変換Tips', link: '/extras/ts-attribute-tips' },
+        // ]
       }
     ],
 
