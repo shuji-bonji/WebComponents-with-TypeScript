@@ -17,25 +17,25 @@ hero:
       text: ガイド
       link: /guide
 
-features:
-  - title: 基本知識
-    details: Web Components の基本概念と仕様について学びます。
-    link: /concepts/
-  - title: TypeScriptでの実装方法
-    details: カスタム要素の定義や Shadow DOM の実装を学びます。
-    link: /typescript/
-  - title: ユースケース別パターン集
-    details: 実用的なパターンとベストプラクティスを紹介します。
-    link: /patterns/
-  - title: テストとデバッグ
-    details: ユニットテストや E2E テストの手法を学びます。
-    link: /testing/
-  - title: 実践アーキテクチャ
-    details: PWA との連携や Storybook を使ったドキュメント化を学びます。
-    link: /architecture/
-  - title: 補足情報
-    details: 他のライブラリとの比較やポータビリティについて紹介します。
-    link: /extras/
+# features:
+#   - title: 基本知識
+#     details: Web Components の基本概念と仕様について学びます。
+#     link: /concepts/
+#   - title: TypeScriptでの実装方法
+#     details: カスタム要素の定義や Shadow DOM の実装を学びます。
+#     link: /typescript/
+#   - title: ユースケース別パターン集
+#     details: 実用的なパターンとベストプラクティスを紹介します。
+#     link: /patterns/
+#   - title: テストとデバッグ
+#     details: ユニットテストや E2E テストの手法を学びます。
+#     link: /testing/
+#   - title: 実践アーキテクチャ
+#     details: PWA との連携や Storybook を使ったドキュメント化を学びます。
+#     link: /architecture/
+#   - title: 補足情報
+#     details: 他のライブラリとの比較やポータビリティについて紹介します。
+#     link: /extras/
 ---
 
 > [!NOTE]

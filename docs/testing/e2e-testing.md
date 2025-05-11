@@ -8,6 +8,7 @@
 E2E（End-to-End）テストは、アプリケーション全体をエンドユーザーの視点からシミュレートし、システムの動作を検証する手法です。  
 Web Components の場合、カスタム要素の表示、操作、イベント発火が期待通りに動作するかを確認します。
 
+---
 
 ## 2. Playwright のセットアップ
 
@@ -23,6 +24,7 @@ npm install -D playwright
 npx playwright install
 ```
 
+---
 
 ## 3. 基本的なテストの実装
 
@@ -32,7 +34,7 @@ npx playwright install
 import { test, expect } from '@playwright/test';
 
 test('WebComponentのレンダリングテスト', async ({ page }) => {
-  await page.goto('http://localhost:3000');
+  await page.goto('https://localhost:3000');
   const element = await page.$('my-web-component');
   expect(element).not.toBeNull();
 });
@@ -41,6 +43,7 @@ test('WebComponentのレンダリングテスト', async ({ page }) => {
 - `page.goto`: 指定した URL にアクセスします。
 - `$`: 要素をセレクタで取得します。
 
+---
 
 ## 4. Shadow DOM のテスト
 
@@ -48,13 +51,14 @@ Shadow DOM 内の要素を取得するには、`shadowRoot` を経由します�
 
 ```ts
 test('Shadow DOM 内のテキスト確認', async ({ page }) => {
-  await page.goto('http://localhost:3000');
+  await page.goto('https://localhost:3000');
   const element = await page.$('my-web-component');
   const shadowContent = await element.evaluate((el) => el.shadowRoot?.querySelector('p')?.textContent);
   expect(shadowContent).toBe('Hello World');
 });
 ```
 
+---
 
 ## 5. 複数コンポーネントの相互作用テスト
 
@@ -62,7 +66,7 @@ test('Shadow DOM 内のテキスト確認', async ({ page }) => {
 
 ```ts
 test('複数コンポーネントの連携テスト', async ({ page }) => {
-  await page.goto('http://localhost:3000');
+  await page.goto('https://localhost:3000');
   const button = await page.$('my-button');
   await button.click();
   const message = await page.$('my-message');
@@ -71,6 +75,7 @@ test('複数コンポーネントの連携テスト', async ({ page }) => {
 });
 ```
 
+---
 
 ## 6. CI/CD への統合
 
@@ -102,6 +107,7 @@ jobs:
       - run: npx playwright test
 ```
 
+---
 
 ## 7. ベストプラクティス
 
