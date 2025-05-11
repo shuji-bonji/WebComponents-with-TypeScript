@@ -23,7 +23,7 @@
 - [ライフサイクルメソッドと型安全なイベント処理](./typescript/lifecycle-and-events)
 - [Shadow DOM構造をTSで記述](./typescript/shadow-dom-in-ts)
 - [属性とプロパティのバインディング](./typescript/attribute-property-binding)
-- [props/attributesのバインディングと型変換](./typescript/props-and-attributes)
+<!-- - [props/attributesのバインディングと型変換](./typescript/props-and-attributes) -->
 - [slotsとcontentの投影](./typescript/slots-and-projection)
 
 

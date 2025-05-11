@@ -25,7 +25,7 @@ Web Components は次の5つの仕様を中心に構成されています。
 |[Custom Elements](./custom-elements)|任意の名前で HTML 要素を定義できる仕組み。独自タグ（例：`<my-button>`）を作成可能|
 |[Shadow DOM](./shadow-dom)|コンポーネント内部に閉じた DOM ツリーとスタイルスコープを提供し、外部のCSSやJSとの干渉を防ぎます。|
 |[HTML Templates](./html-templates)|`<template>` 要素によって再利用可能な DOM 構造を定義し、動的に展開可能にする|
-|[Slot](./slot)|外部から内部へコンテンツを差し込む透過的な挿入ポイントを提供。Reactの`children`に類似|
+|[Slot](../typescript/slots-and-projection.md)|外部から内部へコンテンツを差し込む透過的な挿入ポイントを提供。Reactの`children`に類似|
 |[ES Modules](./es-modules)|モジュール単位でコードを分割・管理する標準仕様。Web Components の再利用を促進する|
 
 > [!NOTE]
