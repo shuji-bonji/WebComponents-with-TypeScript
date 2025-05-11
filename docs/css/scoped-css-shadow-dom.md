@@ -1,4 +1,11 @@
-# 🔹 擬似クラス一覧
+# Scoped CSS in Shadow DOM
+
+Web Components の Scoped CSS は、外部のスタイルや JavaScript の影響を受けず、  
+Shadow DOM 内部のスタイルを閉じ込めることができます。
+
+Web Components の Scoped CSS では、以下の擬似クラスを使用して特定の要素にスタイルを付与できます。
+
+## 🔹 擬似クラス一覧
 |疑似クラス|説明|用途|
 |---|---|---|
 | `::slotted()`| `<slot>` に投影された要素のスタイリング| Shadow DOM 内の外部要素の装飾 |
@@ -7,14 +14,6 @@
 | `::after` | 要素の後にコンテンツを挿入 | インジケータや装飾の追加 |
 | `::backdrop` | `<dialog>` 要素の背景にスタイルを適用| モーダル背景のデザイン変更|
 
----
-
-# Scoped CSS in Shadow DOM
-
-Web Components の Scoped CSS は、外部のスタイルや JavaScript の影響を受けず、  
-Shadow DOM 内部のスタイルを閉じ込めることができます。
-
-Web Components の Scoped CSS では、以下の擬似クラスを使用して特定の要素にスタイルを付与できます。
 
 ## 🔹 ::slotted()
 Shadow DOM の `<slot>` に投影された要素をスタイリングします。
