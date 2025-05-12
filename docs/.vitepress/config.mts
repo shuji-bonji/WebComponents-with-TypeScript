@@ -36,7 +36,7 @@ import { withMermaid } from 'vitepress-plugin-mermaid';
       {
         name: 'twitter:image',
         content:
-          'https://shuji-bonji.github.io/WebComponents-with-TypeScript/images/logo.webp',
+          'https://shuji-bonji.github.io/WebComponents-with-TypeScript/images/logo.png',
       },
     ],
   ],
@@ -50,7 +50,7 @@ import { withMermaid } from 'vitepress-plugin-mermaid';
     sidebar: [
       { text: 'はじめに', link: '/introduction' },
       {
-        text: '基本知識',
+        text: '基本知識', link: '/concepts/',
         items: [
           { text: 'WebComponentsとは？', link: '/concepts/webcomponents-overview' },
           { text: 'Custom Elements', link: '/concepts/custom-elements' },
@@ -65,6 +65,7 @@ import { withMermaid } from 'vitepress-plugin-mermaid';
       },
       {
         text: 'TypeScriptで Web Components の実装方法',
+        link: '/typescript/',
         items: [
           { text: 'Web Component の実装フロー', link: '/typescript/webcomponent-implementation-flow' },
           { text: 'Custom Elementsの実装', link: '/typescript/custom-element-implementation' },
@@ -76,6 +77,7 @@ import { withMermaid } from 'vitepress-plugin-mermaid';
       },
       {
         text: 'CSS設計とベストプラクティス',
+        link: '/css/',
         items: [
           { text: 'BEM（Block Element Modifier）設計の基本', link: '/css/bem-overview' },
           { text: 'Host-based CSS と Shadow DOM', link: '/css/host-based-css-shadow-dom' },
@@ -85,6 +87,7 @@ import { withMermaid } from 'vitepress-plugin-mermaid';
       },
       {
         text: 'ユースケース別パターン集',
+        link: '/patterns/',
         items: [
           { text: '入力部品（<ts-input>）', link: '/patterns/ts-input' },
           { text: 'ボタン／トグル（<ts-toggle>）', link: '/patterns/ts-toggle' },
@@ -95,6 +98,7 @@ import { withMermaid } from 'vitepress-plugin-mermaid';
       },
       {
         text: 'テストとデバッグ',
+        link: '/testing/',
         items: [
           { text: 'Unit Test（Vitest / Web Test Runner）', link: '/testing/unit-testing' },
           { text: 'Shadow DOM内の要素テスト', link: '/testing/shadow-dom-testing' },

@@ -3,7 +3,7 @@
 このページでは、「TypeScript で Web Components を学ぶ」ための学習ガイドの全体像を示します。以下の各セクションは、段階的に理解と実装を深めていくために構成されています。
 
 
-## 1. 基本知識
+## 1. [基本知識](./concepts/)
 
 - [WebComponentsとは？](./concepts/webcomponents-overview)
 - [Custom Elements](./concepts/custom-elements)
@@ -16,7 +16,7 @@
 - [TypeScriptを使う理由とメリット](./concepts/why-typescript)
 
 
-## 2. TypeScriptで Web Components の実装方法
+## 2. [TypeScriptで Web Components の実装方法](./typescript)
 
 - [Web Component の実装フロー](./typescript/webcomponent-implementation-flow)
 - [Custom Elementsの実装](./typescript/custom-element-implementation)
@@ -27,13 +27,14 @@
 - [slotsとcontentの投影](./typescript/slots-and-projection)
 
 
-## 3. CSS設計とベストプラクティス
+## 3. [CSS設計とベストプラクティス](./css/)
 - [BEM（Block Element Modifier）設計の基本](./css/bem-overview)
 - [Host-based CSS と Shadow DOM](./css/host-based-css-shadow-dom)
 - [Scoped CSS と Shadow DOM](./css/scoped-css-shadow-dom)
 - [CSS Variables を用いたテーマ管理](./css/css-variables-theming)
 
-## 4. ユースケース別パターン集
+
+## 4. [ユースケース別パターン集](./patterns/)
 
 - [入力部品（`<ts-input>`）](./patterns/ts-input)
 - [ボタン／トグル（`<ts-toggle>`）](./patterns/ts-toggle)
@@ -42,7 +43,7 @@
 - [イベント発火とカスタムイベントの型定義](./patterns/custom-events)
 
 
-## 5. テストとデバッグ
+## 5. [テストとデバッグ](./testing/)
 
 - [Unit Test（Vitest / Web Test Runner）](./testing/unit-testing)
 - [Shadow DOM内の要素テスト](./testing/shadow-dom-testing)

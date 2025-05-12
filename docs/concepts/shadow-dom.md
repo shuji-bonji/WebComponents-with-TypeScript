@@ -105,27 +105,57 @@ Shadow DOM は `Shadow Boundary` によって Light DOM と明確に区切られ
 
 `Shadow Tree`と `<slot>` 要素は、シャドウホストから `dir` および `lang` 属性を継承しています。
 
+Shadow DOM 内部の要素は、シャドウホスト（Shadow Host）から特定の属性を自動的に継承します。  
+これは、
+
+### 🎯 継承される属性一覧
+| 属性名   | 説明                             | 使用例                     |
+|-----------|--------------------------------|--------------------------|
+| `dir`     | テキストの方向（`ltr` 左から右、`rtl` 右から左） | `<div dir="rtl">`        |
+| `lang`    | 言語設定（例：`en`, `ja`）       | `<div lang="ja">`        |
+| `slot`    | `<slot>` 要素へのスロット指定   | `<span slot="header">`   |
+
 ## 🔹 Shadow DOM の種類
-`attachShadow()` の mode オプションには `"open"` と `"closed"` の2種類があります。  
-`attachShadow({ mode })` を使って作成 し、`mode` に `"open"` や `"closed"` を指定します。
 
-| モード        | 特徴                                | アクセス方法                    |
-|--------------|-----------------------------------|--------------------------------|
-| **open**    | 外部から参照・操作が可能            | `element.shadowRoot` でアクセス |
-| **closed**  | 外部から参照・操作が不可能          | JavaScript からもアクセス不可   |
+`attachShadow()` の `mode` オプションには `"open"` と `"closed"` の2種類があります。  
+`attachShadow({ mode })` を使って作成し、`mode` に `"open"` や `"closed"` を指定します。
 
-### 例
+| モード        | 特徴                                | アクセス方法                    | 主な利用シーン                          |
+|--------------|-----------------------------------|--------------------------------|------------------------------------|
+| **open**    | 外部から参照・操作が可能            | `element.shadowRoot` でアクセス | **開発者が外部からのアクセスを必要とする場合**。例えば、開発者ツールでのデバッグ、外部スクリプトからの DOM 操作、テスト用スクリプトなど。 |
+| **closed**  | 外部から参照・操作が不可能          | JavaScript からもアクセス不可   | **完全なカプセル化が求められる場合**。他のスクリプトや開発者ツールから内部構造を隠したい場合に使用。セキュアなフォームやプライバシー重視のウィジェットなど。 |
+
+### 🎯 違いの具体例
 ```js
 const el = document.createElement("div");
 
 // open モード（外部からアクセス可能）
 const shadowOpen = el.attachShadow({ mode: "open" });
-console.log(el.shadowRoot); // ShadowRoot オブジェクト
+shadowOpen.innerHTML = `<p>Open Shadow DOM</p>`;
+console.log(el.shadowRoot); // ShadowRoot オブジェクトを参照できる
+console.log(shadowOpen.querySelector("p").textContent); // "Open Shadow DOM"
 
 // closed モード（外部からアクセス不可）
 const shadowClosed = el.attachShadow({ mode: "closed" });
+shadowClosed.innerHTML = `<p>Closed Shadow DOM</p>`;
 console.log(el.shadowRoot); // null
+try {
+  console.log(shadowClosed.querySelector("p").textContent);
+} catch (e) {
+  console.error("アクセスできません");
+}
 ```
+
+### 🎯 利用方法の区分け
+| ケース | モード選定 | 理由 |
+|---------|-----------|------|
+| デバッグが必要な開発段階 | `open` | 外部から DOM 構造を確認できるため、素早いデバッグが可能 |
+| サードパーティーの統合 | `open` | 他のライブラリやフレームワークとの統合が容易 |
+| 完全に隔離された内部ロジック | `closed` | 外部から一切の DOM 変更を防ぐ |
+| セキュリティが重要なフォーム | `closed` | 他のスクリプトからの操作を防ぎ、データ漏洩を防止 |
+| 再利用性が高い UI コンポーネント | `open` | 開発者が意図的にカスタマイズしやすい |
+
+`open` は開発の容易さを優先する場合、`closed` はセキュリティやプライバシーを優先する場合に使い分けると良いでしょう。
 
 ## 🔹 Shadow DOM 内部の要素を取得
 Shadow DOM は、外部の CSS やスクリプトの影響を受けない（逆に、外部スタイルを適用しづらい）。
