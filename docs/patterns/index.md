@@ -5,8 +5,8 @@
 
 ## 🔹 学習内容
 
-- [入力部品（<ts-input>）](./ts-input)
-- [ボタン／トグル（<ts-toggle>）](./ts-toggle)
+- [入力部品（`<ts-input>`）](./ts-input)
+- [ボタン／トグル（`<ts-toggle>`）](./ts-toggle)
 - [状態を持つ部品とステート管理](./stateful-components)
 - [ストリーム連携（RxJSとの統合）](./rxjs-integration)
 - [イベント発火とカスタムイベントの型定義](./custom-events)

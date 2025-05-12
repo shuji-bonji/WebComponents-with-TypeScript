@@ -16,7 +16,7 @@
 - [TypeScriptを使う理由とメリット](./concepts/why-typescript)
 
 
-## 2. [TypeScriptで Web Components の実装方法](./typescript)
+## 2. [TypeScriptで Web Components の実装方法](./typescript/)
 
 - [Web Component の実装フロー](./typescript/webcomponent-implementation-flow)
 - [Custom Elementsの実装](./typescript/custom-element-implementation)
