@@ -2,10 +2,7 @@
 title: E2Eテスト（End-to-End Testing）
 description: Playwright による Web Components の E2E テスト手法を解説。レンダリング、Shadow DOM、コンポーネント間連携の検証例を含む。
 ---
----
-title: テスト戦略と分離の考え方
-description: テスト容易性を高めるための設計指針を解説。UI・ロジック分離、依存の注入、モック活用など、テストしやすいWeb Components設計を学びます。
----
+
 
 # E2Eテスト（End-to-End Testing）
 
