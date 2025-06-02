@@ -1,3 +1,7 @@
+---
+title: Atomic Design と Web Components の統合
+description: Atomic Design と Web Components を統合した設計・実装手法を、TypeScript と CSS 設計を含めて体系的に解説。
+---
 # Atomic Design と Web Components の統合
 
 ## はじめに

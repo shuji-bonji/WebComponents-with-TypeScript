@@ -1,4 +1,11 @@
-# テストとデバッグ
+---
+title: テストとデバッグ
+description: Web Components に特化したユニットテスト、Shadow DOM テスト、E2E テストの戦略とツールの使い分け、デバッグ手法を体系的に紹介。
+---
+---
+title: テストとデバッグ
+description: Web Components のテストとデバッグ手法について学びます。ユニットテスト、Shadow DOM のテスト、E2E テストまで、Web Components の特性に合わせた効果的なテスト戦略を紹介しています。
+---
 
 このセクションでは、Web Components のテストとデバッグ手法について学びます。  
 ユニットテスト、Shadow DOM のテスト、E2E テストまで、Web Components の特性に合わせた効果的なテスト戦略を紹介しています。

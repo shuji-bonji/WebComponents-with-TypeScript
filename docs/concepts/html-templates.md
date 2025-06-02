@@ -1,3 +1,10 @@
+---
+description: HTML Template の構造や使い方、Web Components との統合、パフォーマンス最適化の利点をTypeScriptとともに解説。
+---
+---
+title: HTML Templates
+description: HTML Template の構造や使い方、Web Components との統合、パフォーマンス最適化の利点をTypeScriptとともに解説。
+---
 # HTML Templates
 
 **HTML Template** は、再利用可能な DOM 構造を定義し、ブラウザにレンダリングされるまで待機する特殊な要素です。  

@@ -1,3 +1,7 @@
+---
+title: Stateful Components パターン
+description: 内部状態を持つ Web Components の設計手法と、属性との同期、イベント発火、再利用可能な構造の作り方を実例で解説。
+---
 # Stateful Components パターン
 
 ## はじめに

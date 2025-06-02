@@ -1,3 +1,7 @@
+---
+title: BEM概要と実践パターン
+description: Web Components と相性の良い CSS 命名規則「BEM」の基本構造と実践例、Shadow DOM との連携による保守性の高いスタイル設計を解説。
+---
 # BEM概要と実践パターン
 
 BEM（Block Element Modifier）は、CSSの命名規則として広く採用されているメソドロジーで、コンポーネント指向のWebデザインにおいて特に効果を発揮します。Web Componentsと組み合わせることで、さらに強力な開発体験が得られます。

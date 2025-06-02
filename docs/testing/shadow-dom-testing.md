@@ -1,3 +1,7 @@
+---
+title: Shadow DOM のテスト
+description: Web Components における Shadow DOM 内部のテスト手法を、要素取得・スロット検証・スタイル構造などの観点から紹介。
+---
 # Shadow DOM のテスト
 
 Shadow DOM 内部の要素のテストを行うには、通常の DOM と異なる注意点があります。Shadow DOM は外部から直接アクセスできないため、テストには特別な方法が必要です。

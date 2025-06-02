@@ -1,3 +1,7 @@
+---
+title: Template と Slot の連携
+description: Web Components におけるテンプレートとスロットの使い分けと連携方法を解説。再利用性とカプセル化を高める設計を学びます。
+---
 # Template と Slot の連携
 
 Web Components の開発において、`<template>` と `<slot>` はそれぞれ独自の役割を持ちますが、組み合わせることで非常に強力な再利用性とカプセル化を実現できます。ここでは、その連携方法について詳しく解説します。

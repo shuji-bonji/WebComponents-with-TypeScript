@@ -1,3 +1,10 @@
+---
+description: ES Modules の基本構文、動的インポート、再エクスポートの活用方法、Web Components との連携などをTypeScriptで詳しく解説。
+---
+---
+title: ES Modules
+description: ES Modules の基本構文、動的インポート、再エクスポートの活用方法、Web Components との連携などをTypeScriptで詳しく解説。
+---
 # ES Modules
 
 **ES Modules (ECMAScript Modules)** は、JavaScript の標準的なモジュールシステムです。  

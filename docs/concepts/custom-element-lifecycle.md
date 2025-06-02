@@ -1,3 +1,6 @@
+---
+description: Custom Elements のライフサイクル（connectedCallbackなど）とそれぞれの用途・実装例・状態遷移図をTypeScriptで解説。
+---
 # Custom Element のライフサイクル
 
 `Custom Elements` は DOM に追加・削除されたり、属性が変更されたときに特定の処理を行うことができます。  
