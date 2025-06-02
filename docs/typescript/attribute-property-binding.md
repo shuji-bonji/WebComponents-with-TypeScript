@@ -2,6 +2,7 @@
 title: 属性とプロパティのバインディング
 description: Web Components における属性とプロパティの違い、同期方法、リフレクティブ属性の実装パターンをTypeScriptで体系的に解説。
 ---
+
 # 属性とプロパティのバインディング
 
 Web Components において、**プロパティ (Property)** と **属性 (Attribute)** は要素の状態管理に重要な役割を持ちます。  

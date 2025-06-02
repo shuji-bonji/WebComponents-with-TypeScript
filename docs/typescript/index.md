@@ -2,6 +2,7 @@
 title: TypeScriptでの実装方法
 description: Web Components を TypeScript で実装するための基本構成と実装手順を体系的に紹介。各トピックを段階的に学べるセクションです。
 ---
+
 # TypeScriptでの実装方法
 
 このセクションでは、Web Components を TypeScript で実装する方法を学びます。  

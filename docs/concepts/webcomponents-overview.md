@@ -2,6 +2,7 @@
 title: Web Components とは？
 description: Web Components の構成技術やメリット、仕組み、TypeScriptとの相性を体系的に解説。カスタム要素、Shadow DOM、テンプレートなどの要素がどのように連携するかを理解できます。
 ---
+
 # Web Componentsとは？
 
 **Web Components** とは、HTML・CSS・JavaScript の標準技術だけを使って、**再利用可能な UI コンポーネント**を構築するための仕組みです。これは単なるライブラリやフレームワークではなく、**ブラウザネイティブの標準仕様**として開発されています。

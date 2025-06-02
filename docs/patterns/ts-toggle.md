@@ -2,10 +2,6 @@
 title: TS Toggle パターン
 description: ON/OFF スイッチとしての `<ts-toggle>` の構造、状態管理、イベント発火、テーマカスタマイズ、アクセシビリティを含めた設計を解説。
 ---
----
-title: プロジェクト構成
-description: Web Components プロジェクトにおけるディレクトリ構成やファイル分割のベストプラクティスを紹介。保守性とスケーラビリティを両立する設計。
----
 
 # TS Toggle パターン
 

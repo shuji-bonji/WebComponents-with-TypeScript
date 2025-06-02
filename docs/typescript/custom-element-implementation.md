@@ -2,6 +2,7 @@
 title: Custom Elements の実装
 description: Autonomous と Customized の 2 種類のカスタム要素をTypeScriptで実装し、DOM登録、ライフサイクル、Shadow DOM の適用を習得します。
 ---
+
 # Custom Elements の実装
 
 Web Components の主要な要素である **Custom Elements** は、クラスベースの構文を使用して定義されます。ここでは、**Autonomous Custom Elements** と **Customized Built-in Elements** の両方について、TypeScript を活用した実装を学びます。

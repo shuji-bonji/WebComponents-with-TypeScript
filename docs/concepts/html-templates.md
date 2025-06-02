@@ -1,7 +1,4 @@
 ---
-description: HTML Template の構造や使い方、Web Components との統合、パフォーマンス最適化の利点をTypeScriptとともに解説。
----
----
 title: HTML Templates
 description: HTML Template の構造や使い方、Web Components との統合、パフォーマンス最適化の利点をTypeScriptとともに解説。
 ---

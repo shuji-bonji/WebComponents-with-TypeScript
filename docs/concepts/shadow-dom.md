@@ -1,10 +1,8 @@
 ---
-description: Shadow DOM の仕組みや構造、open/closed モード、スタイルの隔離、Web Components との組み合わせ方を図解付きで詳説。
----
----
 title: Shadow DOM
 description: Shadow DOM の仕組みや構造、open/closed モード、スタイルの隔離、Web Components との組み合わせ方を図解付きで詳説。
 ---
+
 # Shadow DOM
 
 **Shadow DOM** は、Web Components の主要な構成要素の一つで、要素内部の DOM 構造を外部のスタイルやスクリプトから隔離する技術です。これにより、真の意味でのカプセル化が実現できます。

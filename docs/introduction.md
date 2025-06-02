@@ -2,6 +2,7 @@
 title: はじめに
 description: Web Components を TypeScript で学ぶための導入ガイド。目的や読者層、技術スタック、TypeScript を採用する理由を体系的に紹介。
 ---
+
 # はじめに
 
 Web Components は、再利用可能でカプセル化された UI コンポーネントを Web 標準技術のみで構築できる仕組みです。React や Vue などのフレームワークを用いずとも、HTML・CSS・JavaScript（TypeScript）だけでコンポーネント志向の開発が可能になります。

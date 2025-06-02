@@ -1,6 +1,7 @@
 ---
 description: Custom Elements の基本構造と定義方法、命名規則、使用例についてTypeScriptで実践的に学ぶガイド。
 ---
+
 # Custom Elements
 
 **Custom Elements** は、Web Components を構成する主要な仕様の1つであり、**独自の HTML タグ（カスタム要素）を定義できる仕組み**です。  

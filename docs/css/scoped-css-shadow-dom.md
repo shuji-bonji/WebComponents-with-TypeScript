@@ -2,6 +2,7 @@
 title: Shadow DOMにおけるScoped CSS
 description: ::slotted() や ::part() を用いたShadow DOMのスコープ付きCSS設計と、擬似要素を活用した高度なスタイル管理方法を解説。
 ---
+
 # Scoped CSS in Shadow DOM
 
 Web Components の Scoped CSS は、外部のスタイルや JavaScript の影響を受けず、  

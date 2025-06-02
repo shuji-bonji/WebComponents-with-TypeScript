@@ -3,7 +3,6 @@ title: Web Components の標準化とブラウザ対応
 description: Web Components の4つの標準仕様と各ブラウザの対応状況、Polyfill、将来的な拡張仕様（HTML Modules 等）について整理。
 ---
 
-
 # Web Components の標準化と各ブラウザの対応状況
 
 **Web Components** は、ブラウザ間での一貫したカスタム要素の利用と、再利用可能な UI コンポーネントの作成を目指した Web 標準技術です。  

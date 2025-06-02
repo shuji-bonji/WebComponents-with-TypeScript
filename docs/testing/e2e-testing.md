@@ -3,7 +3,6 @@ title: E2Eテスト（End-to-End Testing）
 description: Playwright による Web Components の E2E テスト手法を解説。レンダリング、Shadow DOM、コンポーネント間連携の検証例を含む。
 ---
 
-
 # E2Eテスト（End-to-End Testing）
 
 このセクションでは、Web Components を対象とした E2E テストの実装方法について解説します。主に [Playwright](https://playwright.dev/) を使用して、実際のブラウザ環境での操作を自動化し、コンポーネントの正しい動作を検証します。

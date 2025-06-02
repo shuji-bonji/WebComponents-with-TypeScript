@@ -2,6 +2,7 @@
 title: HostベースのCSS適用
 description: Shadow DOM のホスト要素に対する擬似クラスの使い方（:host, :host-context など）とWeb Componentsとの組み合わせ方を詳しく解説。
 ---
+
 # 🔹 Host-based CSS
 Shadow DOM のホスト要素にスタイルを適用するための擬似クラスです。
 

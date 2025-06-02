@@ -2,6 +2,7 @@
 title: Slots と Content の投影（Projection）
 description: Shadow DOM における Slot の役割と使用方法、名前付きスロット、デフォルトコンテンツ、slotchange イベント、スタイリングまでを体系的に解説。
 ---
+
 # Slots と Content の投影（Projection）
 
 **Slot** は、Web Components の Shadow DOM 内に外部のコンテンツを注入するための特殊な要素です。  
