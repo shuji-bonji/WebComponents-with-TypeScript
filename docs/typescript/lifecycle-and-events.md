@@ -1,10 +1,10 @@
 ---
-title: ライフサイクルメソッドと型安全なイベント処理
-description: TypeScript を活用し、カスタム要素のライフサイクルメソッドと型安全なイベント処理を実装する手法を具体例とともに解説します。
+title: TypeScriptでWebComponentsライフサイクル実装
+description: TypeScript を活用し、型安全な Custom Elements のライフサイクルメソッドとイベント処理を実装する手法を具体例とともに解説します。
 ---
 
 
-# ライフサイクルメソッドと型安全なイベント処理
+# TypeScriptでWebComponentsライフサイクル実装
 
 このページでは TypeScript を使って Web Components のライフサイクルメソッドと型安全なイベント処理の実装方法を解説します。  
 基本的なライフサイクルメソッドの使い方から、TypeScript の型定義を活かしたイベント発火の例までを詳しく説明します。

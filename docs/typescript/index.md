@@ -12,7 +12,7 @@ description: Web Components を TypeScript で実装するための基本構成�
 
 - [Web Component の実装フロー](./webcomponent-implementation-flow)
 - [Custom Elementsの実装](./custom-element-implementation)
-- [ライフサイクルメソッドと型安全なイベント処理](./lifecycle-and-events)
+- [TypeScriptでWebComponentsライフサイクル実装](./lifecycle-and-events)
 - [Shadow DOM構造をTSで記述](./shadow-dom-in-ts)
 - [属性とプロパティのバインディング](./attribute-property-binding)
 - [slotsとcontentの投影](./slots-and-projection)

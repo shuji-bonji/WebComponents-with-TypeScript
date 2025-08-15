@@ -1,5 +1,5 @@
 ---
-description: Custom Elements のライフサイクル（connectedCallbackなど）とそれぞれの用途・実装例・状態遷移図をTypeScriptで解説。
+description: WebComponents (Custom Elements) のライフサイクル（connectedCallbackなど）とそれぞれの用途・実装例・状態遷移図をTypeScriptで解説。
 ---
 
 # Custom Element のライフサイクル
@@ -7,7 +7,6 @@ description: Custom Elements のライフサイクル（connectedCallbackなど�
 `Custom Elements` は DOM に追加・削除されたり、属性が変更されたときに特定の処理を行うことができます。  
 これを可能にするのが **ライフサイクルメソッド** です。  
 ライフサイクルメソッドは、Web Components が動的に生成、更新、破棄されるタイミングで自動的に呼び出されます。
-
 
 ## 🔹 主なライフサイクルメソッド
 | メソッド | 説明 |
@@ -283,6 +282,8 @@ stateDiagram-v2
 |**Disconnected**|要素がDOMツリーから削除された状態<br>**このタイミングで `disconnectedCallback()` が呼ばれる**|
 |**Adopted**|要素が別のDocumentに移動された状態<br>**このタイミングで `adoptedCallback()` が呼ばれる**|
 
+## 🔹 TypeScriptでの実装方法
+より詳細なTypeScript実装については → [TypeScriptライフサイクル実装ガイド](../typescript/lifecycle-and-events.html)
 
 ## 🔹 まとめ
 - Custom Elements はライフサイクルメソッドを持ち、DOM の変更に応じて処理を行える。
