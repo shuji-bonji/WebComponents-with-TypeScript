@@ -140,6 +140,6 @@ import { withMermaid } from 'vitepress-plugin-mermaid';
     },
   },
   sitemap: {
-    hostname: 'https://shuji-bonji.github.io/RxJS-with-TypeScript/',
+    hostname: 'https://shuji-bonji.github.io/WebComponents-with-TypeScript/',
   },
 })
