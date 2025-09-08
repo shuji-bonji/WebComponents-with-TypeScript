@@ -16,6 +16,13 @@ TypeScriptでの利用を前提とした、Web Components の学び場です。
 
 この協働プロセスにより、より包括的で理解しやすいドキュメントの提供を目指しています。
 
+## ⚠️ 重要なお知らせ
+**GitHub公式リポジトリ以外のミラーサイトは利用しないでください。**  
+本プロジェクトの正規リポジトリは以下のURLのみです：
+- 正規リポジトリ: https://github.com/shuji-bonji/Situational-Awareness-and-Decision-Making
+
+偽サイトやミラーサイトにご注意ください。
+
 ## 環境構築
 
 ```sh
