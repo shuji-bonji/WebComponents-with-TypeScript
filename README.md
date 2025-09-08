@@ -20,6 +20,7 @@ TypeScriptでの利用を前提とした、Web Components の学び場です。
 **GitHub公式リポジトリ以外のミラーサイトは利用しないでください。**  
 本プロジェクトの正規リポジトリは以下のURLのみです：
 - 正規リポジトリ: https://github.com/shuji-bonji/WebComponents-with-TypeScript/
+
 偽サイトやミラーサイトにご注意ください。
 
 ## 環境構築
