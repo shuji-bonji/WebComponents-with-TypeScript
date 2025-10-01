@@ -1,6 +1,6 @@
 ---
 title: ES Modules
-description: ES Modules の基本構文、動的インポート、再エクスポートの活用方法、Web Components との連携などをTypeScriptで詳しく解説。
+description: ES Modules の基本構文と Web Components での活用方法を解説。export/import による依存関係管理、デフォルトエクスポート、動的インポートによる遅延ロード、再エクスポートによるモジュール統合、ツリーシェイキングによる最適化など、TypeScript 実装例とともに紹介します。
 ---
 # ES Modules
 

@@ -1,5 +1,6 @@
 ---
-description: Web Components を支える基本技術（Custom Elements, Shadow DOM, Templates など）をTypeScriptと共に体系的に学ぶセクション。
+title: 基本知識
+description: Web Components を支える基本技術を体系的に解説。Custom Elements、Shadow DOM、HTML Templates、Slot の連携、ES Modules による依存管理、TypeScript を活用した型安全な実装まで、Web 標準技術に準拠した開発手法を学びます。
 ---
 
 # 基本知識

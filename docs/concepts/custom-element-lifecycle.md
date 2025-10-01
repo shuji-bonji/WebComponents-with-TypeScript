@@ -1,5 +1,6 @@
 ---
-description: WebComponents (Custom Elements) のライフサイクル（connectedCallbackなど）とそれぞれの用途・実装例・状態遷移図をTypeScriptで解説。
+title: Custom Element のライフサイクル
+description: Custom Elements の connectedCallback、disconnectedCallback、attributeChangedCallback、adoptedCallback の役割と実装例を TypeScript で解説。状態遷移図とライフサイクルメソッドの使い分けにより、効率的なリソース管理を実現します。
 ---
 
 # Custom Element のライフサイクル

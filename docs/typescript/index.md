@@ -1,6 +1,6 @@
 ---
 title: TypeScriptでの実装方法
-description: Web Components を TypeScript で実装するための基本構成と実装手順を体系的に紹介。各トピックを段階的に学べるセクションです。
+description: Web Components を TypeScript で実装するための基本構成と実装手順を体系的に解説。カスタム要素の定義から Shadow DOM、属性とプロパティのバインディング、スロット活用まで、段階的に学べる構成です。
 ---
 
 # TypeScriptでの実装方法

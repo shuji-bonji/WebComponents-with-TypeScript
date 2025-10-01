@@ -1,6 +1,6 @@
 ---
 title: Custom Events パターン
-description: Web Components におけるカスタムイベントの基本構文、発火方法、イベント伝播の制御、実装例とベストプラクティスを網羅的に解説。
+description: Web Components におけるカスタムイベントの実装パターンを解説。CustomEvent の基本構文、detail オブジェクトによるデータ渡し、bubbles/composed によるイベント伝播制御、Shadow DOM 境界を越えた通知、一意なイベント名の設計など、実践的なベストプラクティスを紹介します。
 ---
 
 # Custom Events パターン

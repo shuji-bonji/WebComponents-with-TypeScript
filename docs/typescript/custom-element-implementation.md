@@ -1,6 +1,6 @@
 ---
 title: Custom Elements の実装
-description: Autonomous と Customized の 2 種類のカスタム要素をTypeScriptで実装し、DOM登録、ライフサイクル、Shadow DOM の適用を習得します。
+description: Autonomous Custom Elements と Customized Built-in Elements の実装方法を TypeScript で解説。HTMLElement の拡張、customElements.define による登録、ライフサイクルメソッドの活用、Shadow DOM の適用により、再利用可能なコンポーネントを構築します。
 ---
 
 # Custom Elements の実装

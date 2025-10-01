@@ -1,5 +1,6 @@
 ---
-description: Custom Elements の基本構造と定義方法、命名規則、使用例についてTypeScriptで実践的に学ぶガイド。
+title: Custom Elements
+description: Custom Elements の基本構造と定義方法を解説。HTMLElement の拡張、customElements.define による登録、ハイフンを含む命名規則、Autonomous/Customized の 2 種類の実装方法、Shadow DOM・HTML Templates・Slot との連携により、再利用可能な UI コンポーネントを構築します。
 ---
 
 # Custom Elements

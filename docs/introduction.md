@@ -1,6 +1,6 @@
 ---
 title: はじめに
-description: Web Components を TypeScript で学ぶための導入ガイド。目的や読者層、技術スタック、TypeScript を採用する理由を体系的に紹介。
+description: Web Components を TypeScript で学ぶための導入ガイド。フレームワークに依存しない純粋な Web 技術による開発、型安全な設計パターンの習得、再利用可能な UI パーツの構築方法を体系的に解説します。
 ---
 
 # はじめに

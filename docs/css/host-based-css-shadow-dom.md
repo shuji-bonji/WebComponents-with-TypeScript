@@ -1,6 +1,6 @@
 ---
 title: HostベースのCSS適用
-description: Shadow DOM のホスト要素に対する擬似クラスの使い方（:host, :host-context など）とWeb Componentsとの組み合わせ方を詳しく解説。
+description: Shadow DOM のホスト要素へのスタイル適用方法を解説。:host によるホスト要素自体のスタイリング、:host(selector) による条件付きスタイル、:host-context による親要素に応じたテーマ切り替え、:defined、:state() を含む擬似クラスの実践的な使用例を紹介します。
 ---
 
 # 🔹 Host-based CSS

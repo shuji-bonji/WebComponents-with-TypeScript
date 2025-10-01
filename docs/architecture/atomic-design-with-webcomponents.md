@@ -1,6 +1,6 @@
 ---
 title: Atomic Design と Web Components の統合
-description: Atomic Design と Web Components を統合した設計・実装手法を、TypeScript と CSS 設計を含めて体系的に解説。
+description: Atomic Design の階層構造 (Atoms, Molecules, Organisms, Templates, Pages) と Web Components を統合した設計手法を解説。Shadow DOM によるカプセル化、BEM との併用、CSS Variables によるテーマ管理、TypeScript による型安全な実装を含む実践的な開発パターンを紹介します。
 ---
 
 # Atomic Design と Web Components の統合

@@ -1,6 +1,6 @@
 ---
 title: Unit Test（単体テスト）
-description: Web Components のユニットテストを Vitest および Web Test Runner を用いて実装する方法と選定基準を解説。
+description: Web Components のユニットテスト手法を解説。Vitest による高速な DOM 操作テスト、Web Test Runner による実ブラウザでのレンダリング検証、Shadow DOM 内要素の取得方法、属性変更の検証など、各フレームワークの特徴と選定基準を含めて紹介します。
 ---
 
 # Unit Test

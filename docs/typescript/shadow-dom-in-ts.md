@@ -1,6 +1,6 @@
 ---
 title: Shadow DOM の利用と型安全な操作
-description: TypeScript を使って Shadow DOM を操作する方法を基礎から解説。open/closed モード、slot、イベント伝播、ライフサイクルとの統合まで網羅。
+description: TypeScript で Shadow DOM を操作する方法を解説。open/closed モードの使い分け、shadowRoot を通じた要素アクセス、slot によるコンテンツ投影、composed プロパティによるイベント伝播制御、ライフサイクルとの統合を網羅的に紹介します。
 ---
 
 

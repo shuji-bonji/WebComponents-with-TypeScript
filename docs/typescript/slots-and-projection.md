@@ -1,6 +1,6 @@
 ---
 title: Slots と Content の投影（Projection）
-description: Shadow DOM における Slot の役割と使用方法、名前付きスロット、デフォルトコンテンツ、slotchange イベント、スタイリングまでを体系的に解説。
+description: Shadow DOM における Slot の役割と使用方法を解説。名前付きスロットによる柔軟なコンテンツ配置、Fallback Content によるデフォルト表示、slotchange イベントによる変更検知、::slotted() 疑似クラスでのスタイリング、composed によるイベント伝播制御を実践例とともに紹介します。
 ---
 
 # Slots と Content の投影（Projection）

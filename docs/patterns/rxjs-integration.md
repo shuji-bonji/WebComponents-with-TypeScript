@@ -1,6 +1,6 @@
 ---
 title: RxJS Integration パターン
-description: RxJS を Web Components に統合することで実現できるリアクティブな状態管理と非同期処理の実装パターンを解説。
+description: RxJS と Web Components の統合パターンを解説。Observable によるリアクティブなデータフロー、fromEvent による DOM イベントのストリーム化、merge/scan オペレータによる状態管理、非同期処理との連携など、実用的なカウンターコンポーネントの実装例を含めて紹介します。
 ---
 
 # RxJS Integration パターン

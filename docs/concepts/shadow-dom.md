@@ -1,6 +1,6 @@
 ---
 title: Shadow DOM
-description: Shadow DOM の仕組みや構造、open/closed モード、スタイルの隔離、Web Components との組み合わせ方を図解付きで詳説。
+description: Shadow DOM の仕組みと構造を解説。Shadow Host、Shadow Root、Shadow Boundary の役割、open/closed モードの使い分け、スタイルのカプセル化、dir/lang 属性の継承、Custom Elements との統合方法を図解と実装例とともに詳しく紹介します。
 ---
 
 # Shadow DOM

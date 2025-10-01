@@ -1,6 +1,6 @@
 ---
 title: Web Component の実装フロー
-description: Web Component 実装の全体像を8ステップで解説。テンプレート、Shadow DOM、Slot、カスタムイベントなどを段階的に学べます。
+description: Web Component 実装の全体フローを 8 ステップで解説。Template 要素での UI 定義、HTMLElement 継承、Shadow Root の作成、CSS とスロットの統合、カスタムイベントの実装、customElements.define による登録まで、実装図とともに体系的に学びます。
 ---
 
 # Web Component の実装フロー

@@ -1,4 +1,6 @@
 ---
+title: Runtime API Examples
+description: VitePress の Runtime API 使用例を紹介。useData() による site、theme、page、frontmatter データへのアクセス方法を .md および .vue ファイルで実践的に解説します。
 outline: deep
 ---
 

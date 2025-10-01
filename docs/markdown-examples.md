@@ -1,3 +1,8 @@
+---
+title: Markdown Extension Examples
+description: VitePress で使用できる Markdown 拡張機能の例を紹介。Shiki によるシンタックスハイライト、行ハイライト、カスタムコンテナ (info, tip, warning, danger, details) の使用方法を実例とともに解説します。
+---
+
 # Markdown Extension Examples
 
 This page demonstrates some of the built-in markdown extensions provided by VitePress.

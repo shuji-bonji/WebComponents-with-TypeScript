@@ -1,6 +1,6 @@
 ---
 title: 属性とプロパティのバインディング
-description: Web Components における属性とプロパティの違い、同期方法、リフレクティブ属性の実装パターンをTypeScriptで体系的に解説。
+description: Web Components における Attribute と Property の違い、同期メカニズム、リフレクティブ属性の実装方法を TypeScript で解説。observedAttributes、getter/setter の活用により型安全なデータバインディングを実現します。
 ---
 
 # 属性とプロパティのバインディング

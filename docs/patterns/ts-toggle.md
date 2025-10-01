@@ -1,6 +1,6 @@
 ---
 title: TS Toggle パターン
-description: ON/OFF スイッチとしての `<ts-toggle>` の構造、状態管理、イベント発火、テーマカスタマイズ、アクセシビリティを含めた設計を解説。
+description: ON/OFF スイッチコンポーネント `<ts-toggle>` の実装例。Shadow DOM によるスタイルカプセル化、属性とプロパティのバインディング、カスタムイベント発行、CSS Variables を用いたテーマ設定、アクセシビリティ対応を含む設計を解説します。
 ---
 
 # TS Toggle パターン

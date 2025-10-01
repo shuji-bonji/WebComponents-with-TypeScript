@@ -1,6 +1,6 @@
 ---
 title: Shadow DOM のテスト
-description: Web Components における Shadow DOM 内部のテスト手法を、要素取得・スロット検証・スタイル構造などの観点から紹介。
+description: Shadow DOM 内部の要素テスト手法を解説。shadowRoot を経由した要素取得、querySelector による内部要素の検証、スロット内容のテスト、スタイル構造の確認、Vitest を用いた実践的なテストコード例を含めて紹介します。
 ---
 
 # Shadow DOM のテスト

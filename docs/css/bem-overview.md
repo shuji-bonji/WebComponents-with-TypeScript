@@ -1,6 +1,6 @@
 ---
 title: BEM概要と実践パターン
-description: Web Components と相性の良い CSS 命名規則「BEM」の基本構造と実践例、Shadow DOM との連携による保守性の高いスタイル設計を解説。
+description: CSS 命名規則 BEM (Block Element Modifier) の基本構造と Web Components での活用方法を解説。Shadow DOM によるスコープ分離との相性、:host 疑似クラスとの組み合わせ、複数修飾子の扱い、Mix パターンなど、保守性の高いスタイル設計を実践例とともに紹介します。
 ---
 
 # BEM概要と実践パターン

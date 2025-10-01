@@ -1,6 +1,6 @@
 ---
 title: CSS設計とベストプラクティス
-description: Web Components のための CSS 設計手法を解説。Scoped CSS、BEM、CSS Variables を活用したテーマ設計など、実践的なスタイル管理を学びます。
+description: Web Components のための CSS 設計手法を解説。Shadow DOM による Scoped CSS のカプセル化、BEM 命名規則との併用、:host/:host-context 疑似クラスの活用、CSS Variables を用いた動的テーマ管理など、保守性と再利用性の高いスタイル設計を学びます。
 ---
 
 # CSS設計とベストプラクティス

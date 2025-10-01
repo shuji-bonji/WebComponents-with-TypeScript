@@ -1,6 +1,6 @@
 ---
 title: なぜ TypeScript で Web Components を学ぶのか？
-description: JavaScript と TypeScript の違いを比較し、Web Components 開発における型安全性、保守性、開発効率の向上について実践例とともに詳しく解説。
+description: TypeScript による Web Components 開発の利点を解説。型安全性によるバグの早期発見、IDE の強力な補完機能、リファクタリングの容易さ、クラスベース実装との親和性、カスタムイベントの型定義など、実践例を交えて JavaScript との比較から詳しく紹介します。
 ---
 
 # なぜ TypeScript で Web Components を学ぶのか？

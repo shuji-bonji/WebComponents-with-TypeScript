@@ -1,6 +1,6 @@
 ---
 title: CSS変数とテーマの管理
-description: CSS カスタムプロパティを活用し、Web Components でのダークモードや動的テーマ切り替えを柔軟に行う手法を解説。
+description: CSS カスタムプロパティ (CSS Variables) を活用した Web Components のテーマ管理手法を解説。Shadow DOM 内外でのスタイル継承、ダークモードの実装、:host 疑似クラスの活用により、柔軟で一貫性のあるテーマ設計を実現します。
 ---
 
 # CSS 変数とテーマの管理

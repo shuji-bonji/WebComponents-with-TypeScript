@@ -1,6 +1,6 @@
 ---
 title: TS Input パターン
-description: 再利用可能な入力コンポーネントとしての `<ts-input>` の実装、属性バインディング、カスタムイベント、スタイリング、拡張性を解説。
+description: 再利用可能な入力コンポーネント `<ts-input>` の実装例。Shadow DOM によるスタイルカプセル化、value/placeholder/disabled 属性のバインディング、input-change カスタムイベント、CSS Variables によるテーマカスタマイズ、HTML5 バリデーションとの連携を解説します。
 ---
 
 # TS Input パターン

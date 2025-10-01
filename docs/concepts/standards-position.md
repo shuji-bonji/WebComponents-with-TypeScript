@@ -1,6 +1,6 @@
 ---
 title: Web Components の標準化とブラウザ対応
-description: Web Components の4つの標準仕様と各ブラウザの対応状況、Polyfill、将来的な拡張仕様（HTML Modules 等）について整理。
+description: Web Components を構成する 4 つの標準仕様 (Custom Elements, Shadow DOM, HTML Templates, ES Modules) と主要ブラウザ (Chrome, Firefox, Safari, Edge) の対応状況を解説。Polyfill の必要性、将来的な拡張仕様 (HTML Modules, Constructable Stylesheets) についても整理します。
 ---
 
 # Web Components の標準化と各ブラウザの対応状況

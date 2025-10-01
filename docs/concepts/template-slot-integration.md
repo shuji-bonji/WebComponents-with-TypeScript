@@ -1,6 +1,6 @@
 ---
 title: Template と Slot の連携
-description: Web Components におけるテンプレートとスロットの使い分けと連携方法を解説。再利用性とカプセル化を高める設計を学びます。
+description: HTML Template と Slot の役割と連携方法を解説。<template> による再利用可能な DOM 構造の定義、cloneNode での複製、<slot> を用いた外部コンテンツの投影により、柔軟で再利用性の高いコンポーネント設計を実現します。
 ---
 
 # Template と Slot の連携
