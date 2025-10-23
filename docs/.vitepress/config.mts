@@ -39,6 +39,7 @@ import { withMermaid } from 'vitepress-plugin-mermaid';
           'https://shuji-bonji.github.io/WebComponents-with-TypeScript/images/logo.png',
       },
     ],
+    ['link', {rel: 'icon', href: 'favicon.ico'}],
   ],
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
